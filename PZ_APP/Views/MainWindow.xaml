@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:viewModel="clr-namespace:PZ_APP.ViewModels"
         xmlns:local="clr-namespace:PZ_APP.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200"
@@ -10,7 +12,30 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
+        ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
+
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        
+        <DataTemplate DataType="{x:Type viewModel:BaseEquationViewModel}">
+            <local:BaseEquationView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:TemporalEquationViewModel}">
+            <local:TemporalEquationView/>
+        </DataTemplate>
+        
+        <DataTemplate DataType="{x:Type viewModel:EnvironmentalEquationViewModel}">
+            <local:EnvironmentalEquationView/>
+        </DataTemplate>
+
+    </Window.Resources>
+
+
+
     <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/Images/BG-MW.jpg" 
@@ -27,16 +52,15 @@
                 </LinearGradientBrush>
             </Border.BorderBrush>
             <Border.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#df1b1b" Offset="0"/>
-                <GradientStop Color="#d62121" Offset="1"/>
-            </LinearGradientBrush>
-        </Border.Background>
-
-
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#df1b1b" Offset="0"/>
+                    <GradientStop Color="#d62121" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30"/>
+                    <RowDefinition Height="700"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid>
@@ -46,13 +70,13 @@
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="LOG IN"
+                    <TextBlock Text="Calculation Equation to the Common Vulnerability Scoring System"
                                Foreground="DarkGray"
-                               FontSize="10"
+                               FontSize="14"
                                FontFamily="Montsterrat"
                                Grid.Column="0"
                                VerticalAlignment="Center"
-                               Margin="10,0,0,0"/>
+                               Margin="10,10,0,0"/>
                     <Button x:Name="btnMinimize"
                             BorderThickness="0"
                             Content="-"
@@ -85,9 +109,6 @@
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
-
-
-
                     </Button>
                     <Button x:Name="btnClose"
                             BorderThickness="0"
@@ -123,9 +144,65 @@
                         </Button.Template>
                     </Button>
                 </Grid>
+                <Grid>
+                    
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="1038"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal"
+                                Height="70"
+                                Background="#b01010"
+                        >
+                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
+                            <RadioButton 
+                            GroupName="MenuButt"
+                            Style="{StaticResource menuButton}"
+                                 Tag="#FFFFFF"
+                                 Command="{Binding ShowBaseEquationCommand}"
+                                >
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="lock" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Base Equation" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
+                            <RadioButton 
+                            Style="{StaticResource menuButton}"
+                                 Tag="#FFFFFF"
+                                 Command="{Binding ShowTemporalEquationCommand}"
+                                 GroupName="MenuButt">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="unlock" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Temporal Equation" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+                        </Border>
+                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
+                            <RadioButton 
+                            Style="{StaticResource menuButton}"
+                                 Tag="#FFFFFF"
+                                 Command="{Binding ShowEnvironmentalEquationCommand}"
+                                 GroupName="MenuButt">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="key" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Environmental Equation" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+                        </Border>
+                    </StackPanel>
+                </Grid>
+                <ContentControl 
+                    Content="{Binding CurrentChildView}"
+                    Grid.Row="1"
+                    Margin="15">
+                </ContentControl>
             </Grid>
-
-
         </Border>
     </Border>
 </Window>
