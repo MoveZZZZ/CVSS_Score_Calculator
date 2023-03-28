@@ -32,6 +32,10 @@
             <local:EnvironmentalEquationView/>
         </DataTemplate>
 
+        <DataTemplate DataType="{x:Type viewModel:MainMenuViewModel}">
+            <local:MainMenuView/>
+        </DataTemplate>
+
     </Window.Resources>
 
 
@@ -144,58 +148,111 @@
                         </Button.Template>
                     </Button>
                 </Grid>
-                <Grid>
-                    
-                </Grid>
+                <!--
+                <StackPanel Grid.Row="1">
+                    <ComboBox x:Name="myComboBox" SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0">
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Margin="0,30,0,0"
+                               FontSize="15"
+                               FontFamily="Montsterrat"
+                               Foreground="DarkGray"
+                               Text="{Binding Result}">
+                    </TextBlock>
+                    <Button Margin="0,30,0,0"
+                            Content="Jebanie"
+                            Click="Button_Click"
+                            Command="{Binding ClaculateCommand}">
+                    </Button>
+                    </StackPanel>
+                   !-->
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="70"/>
-                        <ColumnDefinition Width="1038"/>
-                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="2" Orientation="Horizontal"
-                                Height="70"
-                                Background="#b01010"
-                        >
-                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
-                            <RadioButton 
+                    <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
+                        <RadioButton  
+                                      Grid.Column="0"
+                                      Height="50"
+                                      Width="130"
+                                      Margin="-10,0,0,0"
                             GroupName="MenuButt"
+                            Style="{StaticResource menuButton}"
+                                 Tag="#FFFFFF"
+                                 Command="{Binding ShowMainMenuCommand}"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="play" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Main" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+                    </Border>
+                    <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
+                    <RadioButton  
+                        Grid.Column="1"
+                            GroupName="MenuButt"
+                                 Margin="-30,0,0,0"
                             Style="{StaticResource menuButton}"
                                  Tag="#FFFFFF"
                                  Command="{Binding ShowBaseEquationCommand}"
                                 >
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="lock" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Base Equation" Style="{StaticResource menuButtonText}"/>
-                                </StackPanel>
-                            </RadioButton>
-                        </Border>
-                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
-                            <RadioButton 
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="lock" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Base Equation" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    </Border>
+                    <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
+                        <RadioButton 
+                            Grid.Column="2"
                             Style="{StaticResource menuButton}"
                                  Tag="#FFFFFF"
+                                     Margin="-30,0,0,0"
                                  Command="{Binding ShowTemporalEquationCommand}"
                                  GroupName="MenuButt">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="unlock" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Temporal Equation" Style="{StaticResource menuButtonText}"/>
-                                </StackPanel>
-                            </RadioButton>
-                        </Border>
-                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="10">
-                            <RadioButton 
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="unlock" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Temporal Equation" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+                    </Border>
+                    <Border Grid.Column="3" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
+                        <RadioButton 
+                            Grid.Column="3"
+                                     Margin="-30,0,0,0"
                             Style="{StaticResource menuButton}"
                                  Tag="#FFFFFF"
                                  Command="{Binding ShowEnvironmentalEquationCommand}"
                                  GroupName="MenuButt">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="key" Style="{StaticResource menuButtonIcon}"/>
-                                    <TextBlock Text="Environmental Equation" Style="{StaticResource menuButtonText}"/>
-                                </StackPanel>
-                            </RadioButton>
-                        </Border>
-                    </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="key" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Environmental Equation" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+                    </Border>
+                    <Border Grid.Column="4" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
+                        <RadioButton  
+                            Grid.Column="0"
+                                      Height="50"
+                                      Width="130"
+                                      Margin="-5,0,0,0"
+                                      Click="RadioButtonExit_Click"
+                            GroupName="MenuButt"
+                            Style="{StaticResource menuButton}"
+                                 Tag="#FFFFFF"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="dungeon" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Exit" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+                    </Border>
                 </Grid>
                 <ContentControl 
                     Content="{Binding CurrentChildView}"

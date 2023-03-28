@@ -38,5 +38,21 @@ namespace PZ_APP.Views
         {
             Application.Current.Shutdown();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButtonExit_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close this activity?",
+                    "Exit",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Question) == MessageBoxResult.OK)
+            {
+                Application.Current.Shutdown();
+            } 
+        }
     }
 }

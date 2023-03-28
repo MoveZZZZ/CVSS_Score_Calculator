@@ -6,22 +6,277 @@
              xmlns:local="clr-namespace:PZ_APP.Views"
              xmlns:viewModel="clr-namespace:PZ_APP.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="1000">
     <UserControl.DataContext>
         <viewModel:BaseEquationViewModel/>
     </UserControl.DataContext>
     <Grid>
-
-        <Border BorderBrush="LightGray" BorderThickness="2">
-            <StackPanel>
-                <TextBlock Text="Sperma Swinej 1"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Margin="100"
-                           Foreground="White"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource BorderTextEqName}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqName}"
+                           Text="AccessVector"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValue}"
+                           Text="{Binding AccessVectorValue}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="0" Grid.Row="1" Style="{StaticResource BorderTextEqName}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqName}"
+                           Text="AccessComplexity"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValue}"
+                           Text="{Binding AccessComplexityValue}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextEqName}">
+                <StackPanel >
+                    <TextBlock Style="{StaticResource TextBaseEqName}"
+                           Text="Authentication"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValue}"
+                           Text="{Binding AuthenticationValue}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="1" Grid.Row="1" Style="{StaticResource BorderTextEqName}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqName}"
+                           Text="Confidentiality Impact"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValue}"
+                           Text="{Binding ConfImpactValue}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderTextEqName}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqName}"
+                           Text="Integrity Impact"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValue}"
+                           Text="{Binding IntegImpact}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderTextEqName}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqName}"
+                           Text="Availability Impact"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValue}"
+                           Text="{Binding AvailImpact}"/>
+                </StackPanel>
+            </Border>
+            <Grid Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2">
+                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderTextEqName}">
+                    <StackPanel>
+                        <TextBlock FontFamily="Montserrat"
+                               FontSize="30"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Text="Result"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                                   Margin="0,30,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2">
+                <Border Grid.Column="0" Grid.Row="0" Style="{StaticResource BorderTextEqName}">
+                    <StackPanel>
+                        <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,3,50,3"
+                               Text="BaseScore"
+                               />
+                        <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,0,50,3"
+                               Text="Impact"
+                               />
+                        <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,0,50,3"
+                               Text="Exploitability"
+                               />
+                        <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,0,50,1"
+                               Text="f(impact)"
+                               />
+                    </StackPanel>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="4">
+                <StackPanel Margin="0,7,0,5">
+                    <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,3,50,3"
+                               Text="{Binding Result}"
+                               />
+                    <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,0,50,3"
+                               Text="{Binding Impact}"
+                               />
+                    <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,0,50,3"
+                               Text="{Binding Exploitability}"
+                               />
+                    <TextBlock FontFamily="Montserrat"
+                               FontSize="15"
+                               HorizontalAlignment="Left"
+                               Foreground="LightGray"
+                               TextAlignment="Center"
+                               Margin="20,0,50,1"
+                               Text="{Binding FImpakt}"
+                               />
+                </StackPanel>
                 
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextEqName}" 
+                    Margin="5,30,5,30">
+                <StackPanel Margin="0,30,0,30">
+                    <TextBlock Style="{StaticResource TextBaseEqBox}"
+                               Text="Access Vector Values"
+                               Margin="0,50,0,0"/>
+                    <ComboBox Margin="10,10,10,20" Style="{StaticResource ComboBoxFlatStyle}"
+                              SelectedItem="{Binding SelectedItemAccessVector, UpdateSourceTrigger=PropertyChanged}"
+                              FontSize="10"
+                              FontFamily="Montserrat"
+                              >
+                        <ComboBoxItem>Requires local access</ComboBoxItem>
+                        <ComboBoxItem>Adjacent network accessible</ComboBoxItem>
+                        <ComboBoxItem>Network accessible</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBox}"
+                               Text="Access Complexyty Values"
+                               Margin="0,50,0,0"/>
+                    <ComboBox Margin="10,10,10,20" Style="{StaticResource ComboBoxFlatStyle}"
+                              SelectedItem="{Binding SelectedItemAccessComplexity, UpdateSourceTrigger=PropertyChanged}"
+                              FontSize="10"
+                              FontFamily="Montserrat"
+                              >
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>Low</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
+                    Margin="5,30,5,30">
+                <StackPanel Margin="0,30,0,30">
+                    <TextBlock Style="{StaticResource TextBaseEqBox}"
+                               Margin="0,50,0,0"
+                               Text="Authentication Values"/>
+                    <ComboBox Margin="10,10,10,20" Style="{StaticResource ComboBoxFlatStyle}"
+                              SelectedItem="{Binding SelectedItemAuthentication, UpdateSourceTrigger=PropertyChanged}"
+                              FontSize="10"
+                              FontFamily="Montserrat"
+                              >
+                        <ComboBoxItem>Requires multiple instances of authentication</ComboBoxItem>
+                        <ComboBoxItem>Requires single instance of authentication</ComboBoxItem>
+                        <ComboBoxItem>Requires no authentication</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBox}"
+                               Text="Confidentiality Impact Values"
+                               Margin="0,50,0,0"/>
+                    <ComboBox Margin="10,10,10,20" Style="{StaticResource ComboBoxFlatStyle}"
+                              SelectedItem="{Binding SelectedItemConfImpact, UpdateSourceTrigger=PropertyChanged}"
+                              FontSize="10"
+                              FontFamily="Montserrat"
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Partial</ComboBoxItem>
+                        <ComboBoxItem>Complete</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="3" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
+                    Margin="5,30,5,30">
+                <StackPanel Margin="0,30,0,30">
+                    <TextBlock Style="{StaticResource TextBaseEqBox}"
+                               Text="Integrity Impact Values"
+                               Margin="0,50,0,0"/>
+                    <ComboBox Margin="10,10,10,20" Style="{StaticResource ComboBoxFlatStyle}"
+                              SelectedItem="{Binding SelectedItemIntegImpact, UpdateSourceTrigger=PropertyChanged}"
+                              FontSize="10"
+                              FontFamily="Montserrat"
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Partial</ComboBoxItem>
+                        <ComboBoxItem>Complete</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBox}"
+                               Text="Availability Impact Values"
+                               Margin="0,50,0,0"/>
+                    <ComboBox Margin="10,10,10,20" Style="{StaticResource ComboBoxFlatStyle}"
+                              SelectedItem="{Binding SelectedItemAvailImpact, UpdateSourceTrigger=PropertyChanged}"
+                              FontSize="10"
+                              FontFamily="Montserrat"
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Partial</ComboBoxItem>
+                        <ComboBoxItem>Complete</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackPanel Height="50" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource ErrorMessage}"
+                           Text="{Binding ErrorMessage}"/>
+                <Button 
+                        Command="{Binding CalculateCommand}"
+                        Style="{StaticResource calculateButton}"/>
+
+
+
             </StackPanel>
-            
-        </Border>
+        </Grid>
     </Grid>
 </UserControl>
