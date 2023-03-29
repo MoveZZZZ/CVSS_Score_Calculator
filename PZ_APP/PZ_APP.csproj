@@ -61,7 +61,10 @@
     </ApplicationDefinition>
     <Compile Include="Models\BaseEquationModel.cs" />
     <Compile Include="Models\IBaseEquationRepository.cs" />
+    <Compile Include="Models\ITemporalEquationRepository.cs" />
+    <Compile Include="Models\TemporalEquationModel.cs" />
     <Compile Include="Repositories\BaseEquationRepository.cs" />
+    <Compile Include="Repositories\TemporalEquationRepository.cs" />
     <Compile Include="ViewModels\EnvironmentalEquationViewModel.cs" />
     <Compile Include="ViewModels\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\TemporalEquationViewModel.cs" />
