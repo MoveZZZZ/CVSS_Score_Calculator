@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace PZ_APP.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для EnvironmentalEquationView.xaml
-    /// </summary>
+
     public partial class EnvironmentalEquationView : UserControl
     {
         public EnvironmentalEquationView()

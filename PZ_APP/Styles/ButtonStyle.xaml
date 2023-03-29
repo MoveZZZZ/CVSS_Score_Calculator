@@ -8,7 +8,7 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0,0,0,0"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#9497CD"/>
+        <Setter Property="Foreground" Value="#1E0508"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -50,20 +50,20 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="150"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Background" Value="#FFDB89"/>
+        <Setter Property="Background" Value="#420C0C"/>
         <Setter Property="Opacity" Value="1"/>
         <Setter Property="Content" Value="Calculate"/>
         <Setter Property="FontFamily" Value="Montserrat"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Foreground" Value="#850000"/>
+        <Setter Property="Foreground" Value="#AD8786"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border 
-                            Background="#FFDB89"
-                            BorderThickness="4,0,0,0"
+                            Background="#420C0C"
+                            BorderThickness="2"
                             CornerRadius="10"
-                            BorderBrush="#DC0000">
+                            BorderBrush="#1E0508">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>

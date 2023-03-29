@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PZ_APP.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для TemporalEquationView.xaml
-    /// </summary>
     public partial class TemporalEquationView : UserControl
     {
         public TemporalEquationView()

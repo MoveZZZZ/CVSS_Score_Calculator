@@ -422,10 +422,7 @@ namespace PZ_APP.ViewModels
 
         public TemporalEquationViewModel()
         {
-            ErrorMessage = "Brak danych!";
-
-
-
+            ErrorMessage = "Bad Data!";
             TemporalEquationRepository = new TemporalEquationRepository();
             _TemporalEquationModel = new TemporalEquationModel();
 
