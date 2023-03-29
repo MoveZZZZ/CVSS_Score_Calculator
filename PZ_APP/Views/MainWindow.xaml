@@ -177,7 +177,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
-                        <RadioButton  
+                        <RadioButton  IsChecked="True"
                                       Grid.Column="0"
                                       Height="50"
                                       Width="130"
