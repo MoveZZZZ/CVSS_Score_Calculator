@@ -57,8 +57,10 @@
             </Border.BorderBrush>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#DC0000" Offset="0"/>
-                    <GradientStop Color="#850000" Offset="1"/>
+                    <GradientStop Color="#F4D3CA" Offset="0"/>
+                    <GradientStop Color="#DFAFA4" Offset="1"/>
+                    <!--<GradientStop Color="#DC0000" Offset="0"/>-->
+                    <!--<GradientStop Color="#850000" Offset="1"/>-->
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -74,8 +76,8 @@
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Calculation Equation to the Common Vulnerability Scoring System"
-                               Foreground="#FFF6C3"
+                    <TextBlock Text="Calculator to the Common Vulnerability Scoring System"
+                               Foreground="#1E0508"
                                FontSize="14"
                                FontFamily="Montsterrat"
                                Grid.Column="0"
@@ -184,8 +186,8 @@
                                       Margin="-10,0,0,0"
                             GroupName="MenuButt"
                             Style="{StaticResource menuButton}"
-                                 Tag="#FFFFFF"
-                                 Command="{Binding ShowMainMenuCommand}"
+                            Tag="#FFFFFF"
+                            Command="{Binding ShowMainMenuCommand}"
                                 >
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="play" Style="{StaticResource menuButtonIcon}"/>

@@ -8,5 +8,6 @@ namespace PZ_APP.ViewModels
 {
     public class MainMenuViewModel: ViewModelBase
     {
+
     }
 }

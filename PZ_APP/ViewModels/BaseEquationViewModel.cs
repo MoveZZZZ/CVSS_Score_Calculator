@@ -318,7 +318,7 @@ namespace PZ_APP.ViewModels
 
         public BaseEquationViewModel()
         {
-            ErrorMessage = "Brak danych!";
+            ErrorMessage = "Bad Data!";
             BaseEquationRepository = new BaseEquationRepository();
             _BaseEquationModel = new BaseEquationModel();
             CalculateCommand = new ViewModelCommand(ExecuteCalculateCommand, CanExecuteCalculateCommand);

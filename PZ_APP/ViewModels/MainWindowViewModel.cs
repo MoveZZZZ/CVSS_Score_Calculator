@@ -36,7 +36,8 @@ namespace PZ_APP.ViewModels
             ShowTemporalEquationCommand = new ViewModelCommand(ExecuteShowTemporalEquationCommand);
             ShowEnvironmentalEquationCommand = new ViewModelCommand(ExecuteShowEnvironmentalEquationCommand);
             ShowMainMenuCommand = new ViewModelCommand(ExecuteShowMainMenu);
-           
+            ExecuteShowMainMenu(null);
+
         }
         private void ExecuteShowMainMenu(object obj)
         {

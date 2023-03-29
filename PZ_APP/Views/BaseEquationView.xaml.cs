@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace PZ_APP.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для BaseEquationView.xaml
-    /// </summary>
+
     public partial class BaseEquationView : UserControl
     {
         public BaseEquationView()
