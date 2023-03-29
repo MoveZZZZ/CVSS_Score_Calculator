@@ -50,13 +50,30 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="150"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="BorderBrush" Value="Cyan"/>
-        <Setter Property="Background" Value="#e61919"/>
+        <Setter Property="Background" Value="#FFDB89"/>
         <Setter Property="Opacity" Value="1"/>
         <Setter Property="Content" Value="Calculate"/>
         <Setter Property="FontFamily" Value="Montserrat"/>
         <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Foreground" Value="Cyan"/>
+        <Setter Property="Foreground" Value="#850000"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                            Background="#FFDB89"
+                            BorderThickness="4,0,0,0"
+                            CornerRadius="10"
+                            BorderBrush="#DC0000">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFDB89"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     
     

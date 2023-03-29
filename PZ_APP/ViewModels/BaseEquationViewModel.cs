@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace PZ_APP.ViewModels
 {
-    public class BaseEquationViewModel :ViewModelBase
+    public class BaseEquationViewModel : ViewModelBase
     {
         private string _selectedItemAccessVectorString;
         private ComboBoxItem _selectedItemAccessVector;
@@ -38,8 +38,15 @@ namespace PZ_APP.ViewModels
         private string _exploitabilityString;
         private string _fimpactString;
 
+        private string _flagAV;
+        private string _flagAC;
+        private string _flagAUTH;
+        private string _flagCI;
+        private string _flagII;
+        private string _flagAI;
 
-        public string AccessVectorValue 
+
+        public string AccessVectorValue
         {
             get { return _selectedItemAccessVectorString; }
             set
@@ -48,8 +55,8 @@ namespace PZ_APP.ViewModels
                 OnPropertyChanged(nameof(AccessVectorValue));
             }
         }
-        public string AccessComplexityValue 
-        { 
+        public string AccessComplexityValue
+        {
             get { return _selectedItemAccessComplexityString; }
             set
             {
@@ -57,28 +64,28 @@ namespace PZ_APP.ViewModels
                 OnPropertyChanged(nameof(AccessComplexityValue));
             }
         }
-        public string AuthenticationValue 
-        { 
+        public string AuthenticationValue
+        {
             get { return _selectedItemAuthenticationString; }
             set
             {
                 _selectedItemAuthenticationString = value;
                 OnPropertyChanged(nameof(AuthenticationValue));
-                
-                
+
+
             }
         }
-        public string ConfImpactValue 
-        { 
+        public string ConfImpactValue
+        {
             get { return _selectedItemConfImpactString; }
             set
             {
-               _selectedItemConfImpactString = value;
-               OnPropertyChanged(nameof(ConfImpactValue));
+                _selectedItemConfImpactString = value;
+                OnPropertyChanged(nameof(ConfImpactValue));
             }
         }
-        public string IntegImpactValue 
-        { 
+        public string IntegImpactValue
+        {
             get { return _selectedItemIntegImpactString; }
             set
             {
@@ -87,8 +94,8 @@ namespace PZ_APP.ViewModels
                 OnPropertyChanged(nameof(IntegImpactValue));
             }
         }
-        public string AvailImpactValue 
-        { 
+        public string AvailImpactValue
+        {
             get { return _selectedItemAvailImpactString; }
             set
             {
@@ -101,7 +108,7 @@ namespace PZ_APP.ViewModels
             get { return _baseScoreString; }
             set
             {
-                if(_baseScoreString != value)
+                if (_baseScoreString != value)
                 {
                     _baseScoreString = value;
                     OnPropertyChanged(nameof(BaseScore));
@@ -113,7 +120,7 @@ namespace PZ_APP.ViewModels
             get { return _impactString; }
             set
             {
-                if(_impactString != value)
+                if (_impactString != value)
                 {
                     _impactString = value;
                     OnPropertyChanged(nameof(Impact));
@@ -125,7 +132,7 @@ namespace PZ_APP.ViewModels
             get { return _exploitabilityString; }
             set
             {
-                if(_exploitabilityString != value)
+                if (_exploitabilityString != value)
                 {
                     _exploitabilityString = value;
                     OnPropertyChanged(nameof(Exploitability));
@@ -137,15 +144,13 @@ namespace PZ_APP.ViewModels
             get { return _fimpactString; }
             set
             {
-                if(_fimpactString != value)
+                if (_fimpactString != value)
                 {
                     _fimpactString = value;
                     OnPropertyChanged(nameof(FImpakt));
                 }
             }
         }
-
-
         public ComboBoxItem SelectedItemAccessVector
         {
             get { return _selectedItemAccessVector; }
@@ -203,7 +208,7 @@ namespace PZ_APP.ViewModels
             get { return _selectedItemIntegImpact; }
             set
             {
-                if(_selectedItemIntegImpact != value)
+                if (_selectedItemIntegImpact != value)
                 {
                     _selectedItemIntegImpact = value;
                     OnPropertyChanged(nameof(SelectedItemIntegImpact));
@@ -216,7 +221,7 @@ namespace PZ_APP.ViewModels
             get { return _selectItemAvailImpact; }
             set
             {
-                if(_selectItemAvailImpact !=value)
+                if (_selectItemAvailImpact != value)
                 {
                     _selectItemAvailImpact = value;
                     OnPropertyChanged(nameof(SelectedItemAvailImpact));
@@ -233,7 +238,78 @@ namespace PZ_APP.ViewModels
                 OnPropertyChanged(nameof(ErrorMessage));
             }
         }
-
+        public string FlagAV
+        {
+            get { return _flagAV; }
+            set
+            {
+                if(_flagAV != value)
+                {
+                    _flagAV = value;
+                    OnPropertyChanged(nameof(FlagAV));
+                }
+            }
+        }
+        public string FlagAC
+        {
+            get { return _flagAC; }
+            set
+            {
+                if(_flagAC != value)
+                {
+                    _flagAC = value;
+                    OnPropertyChanged(nameof(FlagAC));
+                }
+            }
+        }
+        public string FlagAUTH
+        {
+            get { return _flagAUTH; }
+            set
+            {
+                if(_flagAUTH!=value)
+                {
+                    _flagAUTH = value;
+                    OnPropertyChanged(nameof(FlagAUTH));
+                }
+            }
+        }
+        public string FlagCI
+        {
+            get { return _flagCI; }
+            set
+            {
+                if(_flagCI!=value)
+                {
+                    _flagCI = value;
+                    OnPropertyChanged(nameof(FlagCI));
+                }
+            }
+        }
+        public string FlagII
+        {
+            get { return _flagII; }
+            set
+            {
+                if(_flagII != value)
+                {
+                    _flagII = value;
+                    OnPropertyChanged(nameof(FlagII));
+                }
+            }
+        }
+        public string FlagAI
+        {
+            get { return _flagAI; }
+            set
+            {
+                if(_flagAI!=value)
+                {
+                    _flagAI = value;
+                    OnPropertyChanged(nameof(FlagAI));
+                }
+            }
+        }
 
         public ICommand CalculateCommand { get; }
         private IBaseEquationRepository BaseEquationRepository;
@@ -280,6 +356,14 @@ namespace PZ_APP.ViewModels
             Impact = Convert.ToString(_BaseEquationModel.Impact);
             FImpakt = Convert.ToString(_BaseEquationModel.fImpact);
             Exploitability = Convert.ToString(_BaseEquationModel.Exploitability);
+
+
+            FlagAV = Convert.ToString(_BaseEquationModel.AccessVectorNumber);
+            FlagAC = Convert.ToString(_BaseEquationModel.AccessComplexityNumber);
+            FlagAUTH = Convert.ToString(_BaseEquationModel.AuthenticationNumber);
+            FlagCI = Convert.ToString(_BaseEquationModel.ConfImpactNumber);
+            FlagII = Convert.ToString(_BaseEquationModel.IntegImpactNumber);
+            FlagAI = Convert.ToString(_BaseEquationModel.AvailImpactNumber);
         }
         private void SetValuesBaseEquationModel()
         {
@@ -289,6 +373,8 @@ namespace PZ_APP.ViewModels
             _BaseEquationModel.ConfImpactString = _selectedItemConfImpactString;
             _BaseEquationModel.IntegImpactString = _selectedItemIntegImpactString;
             _BaseEquationModel.AvailImpactString = _selectedItemAvailImpactString;
+
+
         }
     }
 }

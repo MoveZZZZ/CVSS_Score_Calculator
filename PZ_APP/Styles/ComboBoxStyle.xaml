@@ -113,4 +113,15 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+
+
+
+
+
+    <Style x:Key="CustomCB" TargetType="{x:Type ComboBox}">
+        <Setter Property="Foreground" Value="#850000"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+    </Style>
 </ResourceDictionary>
