@@ -37,13 +37,13 @@ namespace PZ_APP.Repositories
         public void calculateBaseScore(TemporalEquationModel temporal_equation_model)
         {
             double baseScore = 0;
-            baseScore = ((0.6 * temporal_equation_model.Impact) + (0.4 * temporal_equation_model.Exploitability) - 1.5) * temporal_equation_model.fImpact;
+            baseScore = ((0.6 * temporal_equation_model.Impact) + (0.4 * temporal_equation_model.ExploitabilityBS) - 1.5) * temporal_equation_model.fImpact;
             temporal_equation_model.BaseScore = Math.Round(baseScore, 1);
         }
 
         public void calculateExploitability(TemporalEquationModel temporal_equation_model)
         {
-            temporal_equation_model.Exploitability = 20 * temporal_equation_model.AccessVectorNumber * temporal_equation_model.AccessComplexityNumber * temporal_equation_model.AuthenticationNumber;
+            temporal_equation_model.ExploitabilityBS = 20 * temporal_equation_model.AccessVectorNumber * temporal_equation_model.AccessComplexityNumber * temporal_equation_model.AuthenticationNumber;
         }
 
         public void calculateFImpakt(TemporalEquationModel temporal_equation_model)

@@ -6,21 +6,599 @@
              xmlns:local="clr-namespace:PZ_APP.Views"
              xmlns:viewModel="clr-namespace:PZ_APP.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="670" d:DesignWidth="1170">
     <UserControl.DataContext>
         <viewModel:EnvironmentalEquationViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Border BorderBrush="LightGray" BorderThickness="2">
-            <StackPanel>
-                <TextBlock Text="Sperma Swinej 3"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Margin="100"
-                           Foreground="White"></TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource BorderTextEqName}"
+                    Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="AccessVector"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding AccessVectorValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagAV}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="0" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="AccessComplexity"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding AccessComplexityValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagAC}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel >
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Authentication"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding AuthenticationValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagAUTH}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="1" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Confidentiality Impact"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding ConfImpactValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0,-15,0,0"
+                               Text="{Binding FlagCI}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Integrity Impact"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding IntegImpactValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagII}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Availability Impact"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding AvailImpactValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagAI}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="3" Grid.Row="0" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Exploitability"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                               Text="{Binding ExploitabilityValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagEX}"/>
+                </StackPanel>
+            </Border>
+            <Border  Grid.Column="3" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                     Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Remediation Level"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding RemediationLevelValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagRL}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="0" Style="{StaticResource BorderTextEqNameEnv}"
+                        Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Report Confidence"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding ReportConfidenceValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagRC}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                        Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Collateral Damage Potential"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding CollateralDamagePotentialValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0,-15,0,0"
+                               Text="{Binding FlagCDP}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="0" Style="{StaticResource BorderTextEqNameEnv}"
+                        Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Target Distribution"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding TargetDistributionValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagTD}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                        Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Confidentiality Req"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding ConfReqValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagCR}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="0" Style="{StaticResource BorderTextEqNameEnv}"
+                        Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Integrity Req"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding IntegReqValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagIR}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="6" Grid.Row="1" Style="{StaticResource BorderTextEqNameEnv}"
+                        Background="#DFAFA4">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqNameEnv}"
+                           Text="Availability Req"
+                               TextWrapping="Wrap"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               TextWrapping="Wrap"
+                           Text="{Binding AvailReqValue}"/>
+                    <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
+                               VerticalAlignment="Top"
+                               Margin="0"
+                               Text="{Binding FlagAR}"/>
+                </StackPanel>
+            </Border>
+            <Grid Grid.Row="0" Grid.Column="7" Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="180"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                    Style="{StaticResource BorderTextEqNameEnv}"
+                    Background="#DFAFA4">
+                    <StackPanel Grid.Row="0" Grid.Column="0">
+                        <TextBlock
+                               FontFamily="Montserrat"
+                               FontSize="25"
+                               HorizontalAlignment="Center"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="0,30,0,0"
+                               Text="Result"
+                               />
+                    </StackPanel>
+                </Border>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,3,0,0"
+                               Text="Base Score"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,3,0,3"
+                               Text="Base Score Environmental"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="Temporal Score"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="Temporal Score Environmental"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="Environmental Score"
 
-            </StackPanel>
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="Adjusted Temporal"/>
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="Adjusted Impact"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,3,0,3"
+                               Text="{Binding BaseScore}"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,3,0,3"
+                               Text="{Binding BaseScoreEE}"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="{Binding TemporalScore}"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="{Binding TemporalScoreEE}"
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="{Binding EnvironmentalScore}"
 
-        </Border>
+                        />
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="{Binding AdjustedTemporal}"/>
+                    <TextBlock
+                        FontFamily="Montserrat"
+                               FontSize="12"
+                               HorizontalAlignment="Left"
+                               Foreground="#1E0508"
+                               TextAlignment="Center"
+                               Margin="10,0,0,3"
+                               Text="{Binding AdjustedImpact}"/>
+                </StackPanel>
+
+            </Grid>
+        </Grid>
+
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextEqName}" 
+                    Margin="5,30,5,30"
+                    >
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Access Vector Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"
+                              Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemAccessVector, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Requires local access</ComboBoxItem>
+                        <ComboBoxItem>Adjacent network accessible</ComboBoxItem>
+                        <ComboBoxItem>Network accessible</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Access Complexyty Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"
+                              SelectedItem="{Binding SelectedItemAccessComplexity, UpdateSourceTrigger=PropertyChanged}"
+                              Style="{StaticResource CustomCB}"
+                              >
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>Low</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Confidentiality Impact Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemConfImpact, UpdateSourceTrigger=PropertyChanged}"
+
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Partial</ComboBoxItem>
+                        <ComboBoxItem>Complete</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderTextEqName}" 
+                    Margin="5,30,5,30">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Integrity Impact Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemIntegImpact, UpdateSourceTrigger=PropertyChanged}"
+
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Partial</ComboBoxItem>
+                        <ComboBoxItem>Complete</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Availability Impact Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemAvailImpact, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Partial</ComboBoxItem>
+                        <ComboBoxItem>Complete</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Exploitability Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemExploitability, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Unproven</ComboBoxItem>
+                        <ComboBoxItem>Proof-of-concept</ComboBoxItem>
+                        <ComboBoxItem>Functional</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="3" Grid.Row="0" Style="{StaticResource BorderTextEqName}" 
+                    Margin="5,30,5,30">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Margin="0,40,0,0"
+                               Text="Authentication Values"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemAuthentication, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Requires multiple instances of authentication</ComboBoxItem>
+                        <ComboBoxItem>Requires single instance of authentication</ComboBoxItem>
+                        <ComboBoxItem>Requires no authentication</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Remediation Level Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemRemediationLevel, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Official-fix</ComboBoxItem>
+                        <ComboBoxItem>Temporary-fix</ComboBoxItem>
+                        <ComboBoxItem>Workaround</ComboBoxItem>
+                        <ComboBoxItem>Unavailable</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Style="{StaticResource ErrorMessage}"
+                           Text="{Binding ErrorMessage}"
+                               Margin="0,70,0,0"/>
+                    <Button 
+                        Command="{Binding CalculateCommand}"
+                        Style="{StaticResource calculateButton}"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="4" Grid.Row="0" Style="{StaticResource BorderTextEqName}" 
+                    Margin="5,30,5,30">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Report Confidence Values"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemReportConfidence, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Unconfirmed</ComboBoxItem>
+                        <ComboBoxItem>Uncorroborated</ComboBoxItem>
+                        <ComboBoxItem>Confirmed</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Collateral Damage Potential"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemCollateralDamagePotential, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Low</ComboBoxItem>
+                        <ComboBoxItem>Low-medium</ComboBoxItem>
+                        <ComboBoxItem>Medium-high</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Target Distribution Value"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemTargetDistribution, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Low</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="5" Grid.Row="0" Style="{StaticResource BorderTextEqName}" 
+                    Margin="5,30,5,30">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Conf Req Value"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemConfReq, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Low</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Integ Req Value"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemIntegReq, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Low</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock Style="{StaticResource TextBaseEqBoxEnv}"
+                               Text="Avail Req Value"
+                               Margin="0,40,0,0"/>
+                    <ComboBox Margin="10,10,10,0"  Style="{StaticResource CustomCB}"
+                              SelectedItem="{Binding SelectedItemAvailReq, UpdateSourceTrigger=PropertyChanged}"
+                              >
+                        <ComboBoxItem>Low</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                    </ComboBox>
+
+                </StackPanel>
+            </Border>
+
+
+        </Grid>
     </Grid>
 </UserControl>

@@ -23,12 +23,12 @@
             </StackPanel>
         </Border>
         <Border Grid.Row="1" Style="{StaticResource BorderTextEqName}">
-            <StackPanel Margin="10,50,10,50">
+            <StackPanel Margin="10,20,10,20">
                 <TextBlock Text="   Currently, IT management must identify and assess vulnerabilities across many disparate hardware and software platforms. They need to prioritize these vulnerabilities and remediate those that pose the greatest risk. But when there are so many to fix, with each being scored using different scales, how can IT managers convert this mountain of vulnerability data into actionable information? The Common Vulnerability Scoring System (CVSS) is an open framework that addresses this issue."
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
                            HorizontalAlignment="Stretch"
-                           FontSize="14"
+                           FontSize="16"
                            FontFamily="Montserrat"
                            Foreground="#420C0C"/>
                 <TextBlock Text ="  This application calculates the CVCC scoring based on the corporation's known parameters, given that the flag values ​​are known. The application allows you to calculate Base Equation, Temporal Equation, Environmental Equation."
@@ -36,7 +36,7 @@
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
                            HorizontalAlignment="Stretch"
-                           FontSize="14"
+                           FontSize="16"
                            FontFamily="Montserrat"
                            Foreground="#420C0C"
                     />
@@ -45,9 +45,9 @@
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
                            HorizontalAlignment="Stretch"
-                           FontSize="14"
+                           FontSize="16"
                            FontFamily="Montserrat"
-                           Foreground="#5E1414"/>
+                           Foreground="#420C0C"/>
                 <Image Margin="50,10,50,10"
                        Height="150"
                        Source="/Images/MainMenuTable.png"/>
@@ -56,15 +56,16 @@
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
                            HorizontalAlignment="Stretch"
-                           FontSize="14"
+                           FontSize="16"
                            FontFamily="Montserrat"
                            Foreground="#420C0C"
                            />
                 <TextBlock Text="Source: first.org, A Complete Guide to the Common Vulnerability Scoring System"
                            HorizontalAlignment="Right"
+                           Margin="0,40,0,0"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
-                           FontSize="12"
+                           FontSize="14"
                            FontFamily="Montserrat"
                            Foreground="#1E0508"/>
 
@@ -72,7 +73,7 @@
                            HorizontalAlignment="Right"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
-                           FontSize="12"
+                           FontSize="14"
                            FontFamily="Montserrat"
                            Foreground="#1E0508">
                     <Hyperlink NavigateUri="https://www.first.org/cvss/v2/guide"
@@ -86,7 +87,7 @@
                            HorizontalAlignment="Right"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
-                           FontSize="12"
+                           FontSize="14"
                            FontFamily="Montserrat"
                            Foreground="#1E0508"/>
             </StackPanel>
