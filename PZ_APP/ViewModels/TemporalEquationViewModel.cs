@@ -435,7 +435,7 @@ namespace PZ_APP.ViewModels
                 && _selectedItemAvailImpactString != null && _selectedItemConfImpactString != null && _selectedItemIntegImpactString != null 
                 && _selectedItemExploitabilityString!=null && _selectedItemRemediationLevelString!=null&& _selectedItemReportConfidenceString!=null)
             {
-               SetValuesBaseEquationModel();
+                SetValuesTemporalEquationModel();
                 ErrorMessage = "";
                 return true;
             }
@@ -447,18 +447,17 @@ namespace PZ_APP.ViewModels
             TemporalEquationRepository.setNumberVariables(_TemporalEquationModel);
             TemporalEquationRepository.calculateAllValues(_TemporalEquationModel);
             SetCalculationValue();
-            System.Console.WriteLine(_TemporalEquationModel.BaseScore);
 
         }
 
         private void SetCalculationValue()
         {
-            AccessVectorValue = _selectedItemAccessVectorString; /*+ " (" + Convert.ToString(_BaseEquationModel.AccessVectorNumber) + ")"*/
-            AccessComplexityValue = _selectedItemAccessComplexityString; /*+ " (" + Convert.ToString(_BaseEquationModel.AccessComplexityNumber) + ")"*/
-            AuthenticationValue = _selectedItemAuthenticationString;  /*+" (" + Convert.ToString(_BaseEquationModel.AuthenticationNumber) + ")"*/
-            ConfImpactValue = _selectedItemConfImpactString;  /*+" (" + Convert.ToString(_BaseEquationModel.ConfImpactNumber) + ")"*/
-            IntegImpactValue = _selectedItemIntegImpactString;  /*+" (" + Convert.ToString(_BaseEquationModel.IntegImpactNumber) + ")"*/
-            AvailImpactValue = _selectedItemAvailImpactString; /*+ " (" + Convert.ToString(_BaseEquationModel.AvailImpactNumber) + ")"*/
+            AccessVectorValue = _selectedItemAccessVectorString; 
+            AccessComplexityValue = _selectedItemAccessComplexityString; 
+            AuthenticationValue = _selectedItemAuthenticationString;  
+            ConfImpactValue = _selectedItemConfImpactString; 
+            IntegImpactValue = _selectedItemIntegImpactString;  
+            AvailImpactValue = _selectedItemAvailImpactString; 
             
             ExploitabilityValue = _selectedItemExploitabilityString;
             RemediationLevelValue = _selectedItemRemediationLevelString;
@@ -480,7 +479,7 @@ namespace PZ_APP.ViewModels
             FlagRC = Convert.ToString(_TemporalEquationModel.ReportConfidenceNumber);
         }
 
-        private void SetValuesBaseEquationModel()
+        private void SetValuesTemporalEquationModel()
         {
             _TemporalEquationModel.AccessVectorString = _selectedItemAccessVectorString;
             _TemporalEquationModel.AccessComplexityString = _selectedItemAccessComplexityString;

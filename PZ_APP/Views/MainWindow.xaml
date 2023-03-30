@@ -199,7 +199,7 @@
                     <RadioButton  
                         Grid.Column="1"
                             GroupName="MenuButt"
-                                 Margin="-30,0,0,0"
+                                 Margin="-40,0,0,0"
                             Style="{StaticResource menuButton}"
                                  Tag="#FFFFFF"
                                  Command="{Binding ShowBaseEquationCommand}"
@@ -215,7 +215,7 @@
                             Grid.Column="2"
                             Style="{StaticResource menuButton}"
                                  Tag="#FFFFFF"
-                                     Margin="-30,0,0,0"
+                                     Margin="-40,0,0,0"
                                  Command="{Binding ShowTemporalEquationCommand}"
                                  GroupName="MenuButt">
                             <StackPanel Orientation="Horizontal">
@@ -227,14 +227,15 @@
                     <Border Grid.Column="3" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Margin="5">
                         <RadioButton 
                             Grid.Column="3"
-                                     Margin="-30,0,0,0"
+                                     Margin="-40,0,0,0"
                             Style="{StaticResource menuButton}"
                                  Tag="#FFFFFF"
                                  Command="{Binding ShowEnvironmentalEquationCommand}"
                                  GroupName="MenuButt">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="key" Style="{StaticResource menuButtonIcon}"/>
-                                <TextBlock Text="Environmental Equation" Style="{StaticResource menuButtonText}"/>
+                                <TextBlock Margin="0,0,-5,0"
+                                    Text="Environmental Equation" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                     </Border>

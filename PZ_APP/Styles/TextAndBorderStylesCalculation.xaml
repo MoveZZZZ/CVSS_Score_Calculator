@@ -39,8 +39,46 @@
     <Style x:Key="ErrorMessage" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Montserrat"/>
         <Setter Property="FontSize" Value="13"/>
-        <Setter Property="Foreground" Value="LightGreen"/>
+        <Setter Property="Foreground" Value="#420C0C"/>
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>
-    
+
+
+
+    <Style x:Key="TextBaseEqNameEnv" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="12"/>
+        <!--<Setter Property="Foreground" Value="#FFDB89"/>-->
+        <Setter Property="Foreground" Value="#1E0508"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
+    </Style>
+
+
+    <Style x:Key="TextBaseEqValueEnv" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="10.5"/>
+        <!--<Setter Property="Foreground" Value="#FFF6C3"/>-->
+        <Setter Property="Foreground" Value="#420C0C"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="15,5,15,0"/>
+        <Setter Property="Height" Value="40"/>
+    </Style>
+
+    <Style x:Key="BorderTextEqNameEnv" TargetType="Border">
+        <!--<Setter Property="BorderBrush" Value="#FEBE8C"/>-->
+        <Setter Property="BorderBrush" Value="#AD8786"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style x:Key="TextBaseEqBoxEnv" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#1E0508"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
+    </Style>
+
 </ResourceDictionary>
