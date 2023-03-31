@@ -252,7 +252,7 @@
                                HorizontalAlignment="Center"
                                Foreground="#1E0508"
                                TextAlignment="Center"
-                               Margin="0,30,0,0"
+                               Margin="0,15,0,0"
                                Text="Result"
                                />
                     </StackPanel>
@@ -266,6 +266,7 @@
                                TextAlignment="Center"
                                Margin="10,3,0,0"
                                Text="Base Score"
+                        FontWeight="Bold"
                         />
                     <TextBlock
                         FontFamily="Montserrat"
@@ -284,6 +285,7 @@
                                TextAlignment="Center"
                                Margin="10,0,0,3"
                                Text="Temporal Score"
+                        FontWeight="Bold"
                         />
                     <TextBlock
                         FontFamily="Montserrat"
@@ -302,6 +304,7 @@
                                TextAlignment="Center"
                                Margin="10,0,0,3"
                                Text="Environmental Score"
+                        FontWeight="Bold"
 
                         />
                     <TextBlock
@@ -328,7 +331,8 @@
                                HorizontalAlignment="Left"
                                Foreground="#1E0508"
                                TextAlignment="Center"
-                               Margin="10,3,0,3"
+                               Margin="10,3,0,0"
+                        FontWeight="Bold"
                                Text="{Binding BaseScore}"
                         />
                     <TextBlock
@@ -347,6 +351,7 @@
                                Foreground="#1E0508"
                                TextAlignment="Center"
                                Margin="10,0,0,3"
+                        FontWeight="Bold"
                                Text="{Binding TemporalScore}"
                         />
                     <TextBlock
@@ -366,6 +371,7 @@
                                TextAlignment="Center"
                                Margin="10,0,0,3"
                                Text="{Binding EnvironmentalScore}"
+                        FontWeight="Bold"
 
                         />
                     <TextBlock

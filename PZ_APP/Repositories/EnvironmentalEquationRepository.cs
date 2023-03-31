@@ -50,7 +50,7 @@ namespace PZ_APP.Repositories
         public void calculateEnvironmentalScore(EnvironmentalEquationModel environmental_equation_model)
         {
             double EnvironmentalScore = 0;
-            EnvironmentalScore = (environmental_equation_model.AdjustedTemporal + (10 - environmental_equation_model.AdjustedImpact) *
+            EnvironmentalScore = (environmental_equation_model.AdjustedTemporal + (10 - environmental_equation_model.AdjustedTemporal) *
                 environmental_equation_model.CollateralDamagePotentialNumber) * environmental_equation_model.TargetDistributionNumber;
             environmental_equation_model.EnvironmentalScore = Math.Round(EnvironmentalScore, 1);
         }
@@ -134,7 +134,7 @@ namespace PZ_APP.Repositories
             environmental_equation_model.AccessComplexityNumber = AccessComplexityValuesDict[environmental_equation_model.AccessComplexityString.ToLower()];
             environmental_equation_model.AuthenticationNumber = AuthenticationValuesDict[environmental_equation_model.AuthenticationString.ToLower()];
             environmental_equation_model.ConfImpactNumber = ConfImpactValuesDict[environmental_equation_model.ConfImpactString.ToLower()];
-            environmental_equation_model.IntegImpactNumber = IntegImpactValuesDict[environmental_equation_model.ConfImpactString.ToLower()];
+            environmental_equation_model.IntegImpactNumber = IntegImpactValuesDict[environmental_equation_model.IntegImpactString.ToLower()];
             environmental_equation_model.AvailImpactNumber = AvailImpactValuesDict[environmental_equation_model.AvailImpactString.ToLower()];
 
             environmental_equation_model.ExploitabilityNumber = ExploitabilityValuesDict[environmental_equation_model.ExploitabilityString.ToLower()];

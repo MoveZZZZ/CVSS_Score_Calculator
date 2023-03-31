@@ -76,7 +76,7 @@ namespace PZ_APP.Repositories
             temporal_equation_model.AccessComplexityNumber = AccessComplexityValuesDict[temporal_equation_model.AccessComplexityString.ToLower()];
             temporal_equation_model.AuthenticationNumber = AuthenticationValuesDict[temporal_equation_model.AuthenticationString.ToLower()];
             temporal_equation_model.ConfImpactNumber = ConfImpactValuesDict[temporal_equation_model.ConfImpactString.ToLower()];
-            temporal_equation_model.IntegImpactNumber = IntegImpactValuesDict[temporal_equation_model.ConfImpactString.ToLower()];
+            temporal_equation_model.IntegImpactNumber = IntegImpactValuesDict[temporal_equation_model.IntegImpactString.ToLower()];
             temporal_equation_model.AvailImpactNumber = AvailImpactValuesDict[temporal_equation_model.AvailImpactString.ToLower()];
 
             temporal_equation_model.ExploitabilityNumber = ExploitabilityValuesDict[temporal_equation_model.ExploitabilityString.ToLower()];

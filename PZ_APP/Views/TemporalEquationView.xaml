@@ -167,6 +167,7 @@
                                TextAlignment="Center"
                                Margin="0,5,0,3"
                                Text="Temporal Score"
+                                   FontWeight="Bold"
                                />
                         <TextBlock FontFamily="Montserrat"
                                FontSize="15"
@@ -174,6 +175,7 @@
                                Foreground="#420C0C"
                                TextAlignment="Center"
                                Text="{Binding TemporalScore}"
+                                   FontWeight="Bold"
                                />
                         <TextBlock FontFamily="Montserrat"
                                FontSize="15"
