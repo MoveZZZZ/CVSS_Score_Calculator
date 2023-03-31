@@ -62,7 +62,7 @@ namespace PZ_APP.Repositories
             base_equation_model.AccessComplexityNumber = AccessComplexityValuesDict[base_equation_model.AccessComplexityString.ToLower()];
             base_equation_model.AuthenticationNumber = AuthenticationValuesDict[base_equation_model.AuthenticationString.ToLower()];
             base_equation_model.ConfImpactNumber = ConfImpactValuesDict[base_equation_model.ConfImpactString.ToLower()];
-            base_equation_model.IntegImpactNumber = IntegImpactValuesDict[base_equation_model.ConfImpactString.ToLower()];
+            base_equation_model.IntegImpactNumber = IntegImpactValuesDict[base_equation_model.IntegImpactString.ToLower()];
             base_equation_model.AvailImpactNumber = AvailImpactValuesDict[base_equation_model.AvailImpactString.ToLower()];
         }
         private void fillDictionaries()

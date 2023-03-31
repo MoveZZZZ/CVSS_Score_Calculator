@@ -138,6 +138,7 @@
                                TextAlignment="Center"
                                Margin="20,3,50,3"
                                Text="BaseScore"
+                                   FontWeight="Bold"
                                />
                         <TextBlock FontFamily="Montserrat"
                                FontSize="15"
@@ -175,6 +176,7 @@
                                TextAlignment="Center"
                                Margin="0,3,50,3"
                                Text="{Binding BaseScore}"
+                               FontWeight="Bold"
                                />
                     <TextBlock FontFamily="Montserrat"
                                FontSize="15"
