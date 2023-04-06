@@ -10,15 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PZ_APP.Views
 {
-
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для StartScreen.xaml
+    /// </summary>
+    public partial class StartScreen : Window
     {
-        public MainWindow()
+        public StartScreen()
         {
             InitializeComponent();
         }
@@ -44,15 +45,18 @@ namespace PZ_APP.Views
 
         }
 
-        private void RadioButtonExit_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to close this activity?",
-                    "Exit",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Question) == MessageBoxResult.OK)
-            {
-                Application.Current.Shutdown();
-            } 
+            MainWindow v2Calc = new MainWindow();
+            v2Calc.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MainWindowV31 v3Calc = new MainWindowV31();
+            v3Calc.Show();
+            this.Close();
         }
     }
 }

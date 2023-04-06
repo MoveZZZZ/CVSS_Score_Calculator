@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="PZ_APP.Views.V3._1.MainMenuViewV3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PZ_APP.Views.V3._1"
+             mc:Ignorable="d" 
+            d:DesignHeight="670" d:DesignWidth="1170">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="600"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Style="{StaticResource BorderTextEqName}">
+            <StackPanel Margin="3">
+                <TextBlock FontFamily="Montserrat"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontSize="12"
+                           Foreground="#1E0508"
+                           Text="FAQ"/>
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource BorderTextEqName}">
+            <StackPanel Margin="10,20,10,20">
+                <TextBlock Text="   Currently, IT management must identify and assess vulnerabilities across many disparate hardware and software platforms. They need to prioritize these vulnerabilities and remediate those that pose the greatest risk. But when there are so many to fix, with each being scored using different scales, how can IT managers convert this mountain of vulnerability data into actionable information? The Common Vulnerability Scoring System (CVSS) is an open framework that addresses this issue."
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Stretch"
+                           FontSize="16"
+                           FontFamily="Montserrat"
+                           Foreground="#420C0C"/>
+                <TextBlock Text ="  This application calculates the CVCC scoring based on the corporation's known parameters, given that the flag values ​​are known. The application allows you to calculate Base Equation, Temporal Equation, Environmental Equation."
+                           Margin="0,10,0,0"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Stretch"
+                           FontSize="16"
+                           FontFamily="Montserrat"
+                           Foreground="#420C0C"
+                    />
+                <TextBlock Text="Each metric in the vector consists of the abbreviated metric name, followed by a : (colon), then the abbreviated metric value. The vector lists these metrics in a predetermined order, using the / (slash) character to separate the metrics. If a temporal or environmental metric is not to be used, it is given a value of ND (not defined). The base, temporal, and environmental vectors are shown below in Table."
+                           Margin="0,10,0,0"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Stretch"
+                           FontSize="16"
+                           FontFamily="Montserrat"
+                           Foreground="#420C0C"/>
+                
+                <TextBlock Text="   For example, a vulnerability with base metric values of Access Vector: Low, Access Complexity: Medium, Authentication: None, Confidentiality Impact: None, Integrity Impact: Partial, Availability Impact: Complete would have the following base vector: AV:L/AC:M/Au:N/C:N/I:P/A:C."
+                           Margin="0,10,0,0"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           HorizontalAlignment="Stretch"
+                           FontSize="16"
+                           FontFamily="Montserrat"
+                           Foreground="#420C0C"
+                           />
+                <TextBlock Text="Source: first.org, Common Vulnerability Scoring System v3.1: Specification Document"
+                           HorizontalAlignment="Right"
+                           Margin="0,40,0,0"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           FontSize="14"
+                           FontFamily="Montserrat"
+                           FontWeight="Bold"
+                           Foreground="#1E0508"/>
+
+                <TextBlock 
+                           HorizontalAlignment="Right"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           FontSize="14"
+                           FontFamily="Montserrat"
+                           Foreground="#1E0508">
+                    <Hyperlink NavigateUri="https://www.first.org/cvss/v3.1/specification-document"
+                               RequestNavigate="Hyperlink_RequestNavigate"
+                               FontWeight="Bold">
+                        Source Link
+                    </Hyperlink>
+
+                </TextBlock>
+                <TextBlock Text="Application Author: Maksim Filatau"
+                           Margin="0,3,0,0"
+                           HorizontalAlignment="Right"
+                           TextWrapping="Wrap"
+                           VerticalAlignment="Stretch"
+                           FontSize="14"
+                           FontFamily="Montserrat"
+                           FontWeight="Bold"
+                           Foreground="#1E0508"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

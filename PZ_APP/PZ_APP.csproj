@@ -59,26 +59,49 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\BaseEquationModel.cs" />
-    <Compile Include="Models\EnvironmentalEquationModel.cs" />
-    <Compile Include="Models\IBaseEquationRepository.cs" />
-    <Compile Include="Models\IEnvironmentalEquationRepository.cs" />
-    <Compile Include="Models\ITemporalEquationRepository.cs" />
-    <Compile Include="Models\TemporalEquationModel.cs" />
-    <Compile Include="Repositories\BaseEquationRepository.cs" />
-    <Compile Include="Repositories\EnvironmentalEquationRepository.cs" />
-    <Compile Include="Repositories\TemporalEquationRepository.cs" />
-    <Compile Include="ViewModels\EnvironmentalEquationViewModel.cs" />
-    <Compile Include="ViewModels\MainMenuViewModel.cs" />
-    <Compile Include="ViewModels\TemporalEquationViewModel.cs" />
-    <Compile Include="Views\EnvironmentalEquationView.xaml.cs">
+    <Compile Include="Models\V2.0\BaseEquationModel.cs" />
+    <Compile Include="Models\V2.0\EnvironmentalEquationModel.cs" />
+    <Compile Include="Models\V2.0\IBaseEquationRepository.cs" />
+    <Compile Include="Models\V2.0\IEnvironmentalEquationRepository.cs" />
+    <Compile Include="Models\V2.0\ITemporalEquationRepository.cs" />
+    <Compile Include="Models\V2.0\TemporalEquationModel.cs" />
+    <Compile Include="Repositories\V2.0\BaseEquationRepository.cs" />
+    <Compile Include="Repositories\V2.0\EnvironmentalEquationRepository.cs" />
+    <Compile Include="Repositories\V2.0\TemporalEquationRepository.cs" />
+    <Compile Include="ViewModels\V3.1\BaseEquationViewModelV3.cs" />
+    <Compile Include="ViewModels\V2.0\EnvironmentalEquationViewModel.cs" />
+    <Compile Include="ViewModels\V2.0\MainMenuViewModel.cs" />
+    <Compile Include="ViewModels\V2.0\TemporalEquationViewModel.cs" />
+    <Compile Include="ViewModels\V3.1\EnvironmentalEquationViewModelV3.cs" />
+    <Compile Include="ViewModels\V3.1\MainMenuViewModelV3.cs" />
+    <Compile Include="ViewModels\V3.1\MainWindowViewModelV3.cs" />
+    <Compile Include="ViewModels\V3.1\TemporalEquationViewModelV3.cs" />
+    <Compile Include="Views\V3.1\BaseEquationsViewV3.xaml.cs">
+      <DependentUpon>BaseEquationsViewV3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\V2.0\EnvironmentalEquationView.xaml.cs">
       <DependentUpon>EnvironmentalEquationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainMenuView.xaml.cs">
+    <Compile Include="Views\V2.0\MainMenuView.xaml.cs">
       <DependentUpon>MainMenuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TemporalEquationView.xaml.cs">
+    <Compile Include="Views\V3.1\EnvironmentalEquationV3View.xaml.cs">
+      <DependentUpon>EnvironmentalEquationV3View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\V3.1\MainMenuViewV3.xaml.cs">
+      <DependentUpon>MainMenuViewV3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\V3.1\MainWindowV31.xaml.cs">
+      <DependentUpon>MainWindowV31.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StartScreen.xaml.cs">
+      <DependentUpon>StartScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\V2.0\TemporalEquationView.xaml.cs">
       <DependentUpon>TemporalEquationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\V3.1\TemporalEquationV3View.xaml.cs">
+      <DependentUpon>TemporalEquationV3View.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\ButtonStyle.xaml">
       <SubType>Designer</SubType>
@@ -92,19 +115,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\BaseEquationView.xaml">
+    <Page Include="Views\V3.1\BaseEquationsViewV3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\EnvironmentalEquationView.xaml">
+    <Page Include="Views\V2.0\BaseEquationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainMenuView.xaml">
+    <Page Include="Views\V2.0\EnvironmentalEquationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Views\V2.0\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\V2.0\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -112,18 +139,38 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\BaseEquationViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\V2.0\BaseEquationViewModel.cs" />
+    <Compile Include="ViewModels\V2.0\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="ViewModels\ViewModelCommand.cs" />
-    <Compile Include="Views\BaseEquationView.xaml.cs">
+    <Compile Include="Views\V2.0\BaseEquationView.xaml.cs">
       <DependentUpon>BaseEquationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainWindow.xaml.cs">
+    <Compile Include="Views\V2.0\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\TemporalEquationView.xaml">
+    <Page Include="Views\V3.1\EnvironmentalEquationV3View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\V3.1\MainMenuViewV3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\V3.1\MainWindowV31.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StartScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\V2.0\TemporalEquationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\V3.1\TemporalEquationV3View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +207,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MainMenuTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\V3.1\" />
+    <Folder Include="Repositories\V3.1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
