@@ -76,7 +76,7 @@
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Calculator to the Common Vulnerability Scoring System"
+                    <TextBlock Text="Calculator to the Common Vulnerability Scoring System Version 2"
                                Foreground="#1E0508"
                                FontSize="14"
                                FontFamily="Montsterrat"
@@ -252,7 +252,7 @@
                                 >
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="dungeon" Style="{StaticResource menuButtonIcon}"/>
-                                <TextBlock Text="Exit" Style="{StaticResource menuButtonText}"/>
+                                <TextBlock Text="Back" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
                     </Border>

@@ -75,6 +75,33 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
-    
+
+    <Style x:Key="startMenuButton" TargetType="Button">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="110"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="#420C0C"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="#AD8786"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border 
+                            Background="#420C0C"
+                            BorderThickness="2"
+                            CornerRadius="10"
+                            BorderBrush="#1E0508">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFDB89"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>
