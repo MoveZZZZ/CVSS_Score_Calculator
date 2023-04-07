@@ -53,6 +53,7 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
+                               Height="25"
                            Text="{Binding AttackCompexityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
@@ -68,6 +69,7 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
+                               Height="25"
                            Text="{Binding PrivilegesRequiredValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
@@ -154,6 +156,7 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
+                               Height="25"
                            Text="{Binding ExploitCodeMaturityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
@@ -169,6 +172,7 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
+                               Height="25"
                            Text="{Binding RemediationLevelValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
@@ -185,6 +189,7 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
+                               Height="25"
                            Text="{Binding ReportConfidenceValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
@@ -374,7 +379,7 @@
                         <ComboBoxItem>Unproven</ComboBoxItem>
                         <ComboBoxItem>Proof-of-Concept</ComboBoxItem>
                         <ComboBoxItem>Functional</ComboBoxItem>
-                        <ComboBoxItem>Hight</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
                     </ComboBox>
                     <TextBlock Style="{StaticResource TextBaseEqBox}"
                                Text="Remediation Level"
@@ -384,7 +389,7 @@
 
                               >
                         <ComboBoxItem>None</ComboBoxItem>
-                        <ComboBoxItem>Offical Fix</ComboBoxItem>
+                        <ComboBoxItem>Official Fix</ComboBoxItem>
                         <ComboBoxItem>Temporary Fix</ComboBoxItem>
                         <ComboBoxItem>Workaround</ComboBoxItem>
                         <ComboBoxItem>Unavailable</ComboBoxItem>

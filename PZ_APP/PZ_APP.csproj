@@ -65,9 +65,15 @@
     <Compile Include="Models\V2.0\IEnvironmentalEquationRepository.cs" />
     <Compile Include="Models\V2.0\ITemporalEquationRepository.cs" />
     <Compile Include="Models\V2.0\TemporalEquationModel.cs" />
+    <Compile Include="Models\V3.1\BaseEquationsModelV3.cs" />
+    <Compile Include="Models\V3.1\IBaseEquationsRepositoryV3.cs" />
+    <Compile Include="Models\V3.1\ITemporalEquationsRepositoryV3.cs" />
+    <Compile Include="Models\V3.1\TemporalEquationsModelV3.cs" />
     <Compile Include="Repositories\V2.0\BaseEquationRepository.cs" />
     <Compile Include="Repositories\V2.0\EnvironmentalEquationRepository.cs" />
     <Compile Include="Repositories\V2.0\TemporalEquationRepository.cs" />
+    <Compile Include="Repositories\V3.1\BaseEquationsRepositoryV3.cs" />
+    <Compile Include="Repositories\V3.1\TemporalEquationsRepositoryV3.cs" />
     <Compile Include="ViewModels\V3.1\BaseEquationViewModelV3.cs" />
     <Compile Include="ViewModels\V2.0\EnvironmentalEquationViewModel.cs" />
     <Compile Include="ViewModels\V2.0\MainMenuViewModel.cs" />
@@ -208,9 +214,6 @@
   <ItemGroup>
     <Resource Include="Images\MainMenuTable.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\V3.1\" />
-    <Folder Include="Repositories\V3.1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

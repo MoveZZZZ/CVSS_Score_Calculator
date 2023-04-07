@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PZ_APP.Models.V3._1;
+using PZ_APP.Repositories.V3._1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -478,9 +480,13 @@ namespace PZ_APP.ViewModels.V3._1
         }
 
         public ICommand CalculateCommand { get; }
+        private ITemporalEquationsRepositoryV3 TemporalEquationRepositoryV3;
+        private TemporalEquationsModelV3 _TemporalEquationModelV3;
         public TemporalEquationViewModelV3()
         {
             ErrorMessage = "Bad data!";
+            TemporalEquationRepositoryV3 = new TemporalEquationsRepositoryV3();
+            _TemporalEquationModelV3 = new TemporalEquationsModelV3();
             CalculateCommand = new ViewModelCommand(ExecuteCalculateCommand, CanExecuteCalculateCommand);
 
         }
@@ -490,6 +496,7 @@ namespace PZ_APP.ViewModels.V3._1
                  && _selectedItemIntegrityString != null && _selectedItemPrivilegesRequiredString != null && _selectedItemScopeString != null && _selectedItemUserInteractionString != null
                  &&_selectedItemExploitCodeMaturityString!=null&&_selectedItemRemediationLevelString!=null&&_selectedItemReportConfidenceString!=null)
             {
+                SetValuesTemporalEquationModelV3();
                 ErrorMessage = "";
                 return true;
 
@@ -499,9 +506,32 @@ namespace PZ_APP.ViewModels.V3._1
 
         private void ExecuteCalculateCommand(object obj)
         {
-            SetCalculationValue();
+            TemporalEquationRepositoryV3.setNumberVariables(_TemporalEquationModelV3);
+            TemporalEquationRepositoryV3.calculateAllValues(_TemporalEquationModelV3);
+            SetEndValue();
         }
-        private void SetCalculationValue()
+        private void SetEndValue()
+        {
+            setBasicValues();
+            setFlags();
+            setCalculatedValues();
+        }
+        private void SetValuesTemporalEquationModelV3()
+        {
+            _TemporalEquationModelV3.AttackVectorString = _selectedItemAttackVectorString;
+            _TemporalEquationModelV3.AttackComplexityString = _selectedItemAttackComplexityString;
+            _TemporalEquationModelV3.PrivilegesRequiredString = _selectedItemPrivilegesRequiredString;
+            _TemporalEquationModelV3.UserInteractionString = _selectedItemUserInteractionString;
+            _TemporalEquationModelV3.ScopeString = _selectedItemScopeString;
+            _TemporalEquationModelV3.ConfidentialityString = _selectedItemConfidentialityString;
+            _TemporalEquationModelV3.IntegrityString = _selectedItemIntegrityString;
+            _TemporalEquationModelV3.AvailabilityString = _selectedItemAvailabilityString;
+            _TemporalEquationModelV3.ExploitCodeMaturityString = _selectedItemExploitCodeMaturityString;
+            _TemporalEquationModelV3.RemediationLevelString = _selectedItemRemediationLevelString;
+            _TemporalEquationModelV3.ReportConfidenceString = _selectedItemReportConfidenceString;
+
+        }
+        private void setBasicValues()
         {
             AttackVectorValue = _selectedItemAttackVectorString;
             AttackCompexityValue = _selectedItemAttackComplexityString;
@@ -515,5 +545,25 @@ namespace PZ_APP.ViewModels.V3._1
             RemediationLevelValue = _selectedItemRemediationLevelString;
             ReportConfidenceValue = _selectedItemReportConfidenceString;
         }
+        private void setFlags()
+        {
+            FlagAV = Convert.ToString(_TemporalEquationModelV3.AttackVectorNumber);
+            FlagAC = Convert.ToString(_TemporalEquationModelV3.AttackComplexityNumber);
+            FlagPR = Convert.ToString(_TemporalEquationModelV3.PrivilegesRequiredNumber);
+            FlagUI = Convert.ToString(_TemporalEquationModelV3.UserInteractionNumber);
+            FlagS = Convert.ToString(_TemporalEquationModelV3.ScopeNumber);
+            FlagC = Convert.ToString(_TemporalEquationModelV3.ConfidentialityNumber);
+            FlagI = Convert.ToString(_TemporalEquationModelV3.IntegrityNumber);
+            FlagA = Convert.ToString(_TemporalEquationModelV3.AvailabilityNumber);
+            FlagE = Convert.ToString(_TemporalEquationModelV3.ExploitCodeMaturityNumber);
+            FlagRL = Convert.ToString(_TemporalEquationModelV3.RemediationLevelNumber);
+            FlagRC = Convert.ToString(_TemporalEquationModelV3.ReportConfidenceNumber);
+        }
+        private void setCalculatedValues()
+        {
+            BaseScoreValue = Convert.ToString(_TemporalEquationModelV3.BaseScore) + " (" + _TemporalEquationModelV3.RatingBase + ")";
+            TemporalScoreValue = Convert.ToString(_TemporalEquationModelV3.TemporalScore) +" ("+ _TemporalEquationModelV3.RatingTemporal+")";
+        }
+
     }
 }
