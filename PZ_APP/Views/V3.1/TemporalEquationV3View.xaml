@@ -38,11 +38,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding AttackVectorValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagAV}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="0" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -53,11 +53,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding AttackCompexityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagAC}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -68,11 +68,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding PrivilegesRequiredValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagPR}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="1" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -82,11 +82,11 @@
                            Text="User Interaction (UI)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding UserInteractionValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagUI}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -96,11 +96,11 @@
                            Text="Scope (S)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding ScopeValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagS}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -110,11 +110,11 @@
                            Text="Confidentiality (C)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding ConfidentialityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagC}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="3" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -124,11 +124,11 @@
                            Text="Integrity (I)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding IntegrityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagI}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="3" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -138,11 +138,11 @@
                            Text="Availability (A)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding AvailabilityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagA}"/>
                 </StackPanel>
             </Border>
 
@@ -154,11 +154,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding ExploitCodeMaturityValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagE}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="4" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -169,11 +169,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding RemediationLevelValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagRL}"/>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" Style="{StaticResource BorderTextEqName}"
@@ -185,11 +185,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding }"/>
+                           Text="{Binding ReportConfidenceValue}"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                VerticalAlignment="Top"
                                Margin="0"
-                               Text="{Binding }"/>
+                               Text="{Binding FlagRC}"/>
                 </StackPanel>
             </Border>
 
@@ -226,7 +226,7 @@
                                HorizontalAlignment="Center"
                                Foreground="#420C0C"
                                TextAlignment="Center"
-                               Text="{Binding }"
+                               Text="{Binding TemporalScoreValue}"
                                    FontWeight="Bold"
                                />
                         <TextBlock FontFamily="Montserrat"
@@ -242,7 +242,7 @@
                                HorizontalAlignment="Center"
                                Foreground="#420C0C"
                                TextAlignment="Center"
-                               Text="{Binding }"
+                               Text="{Binding BaseScoreValue}"
                                />
                     </StackPanel>
                 </Border>
@@ -265,7 +265,7 @@
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"
                               Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a , UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemAttackVector , UpdateSourceTrigger=PropertyChanged}"
                               
                               >
                         <ComboBoxItem>Network</ComboBoxItem>
@@ -277,7 +277,7 @@
                                Text="Attack Complexyty Values"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"
-                              SelectedItem="{Binding a , UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemAttackCompexity , UpdateSourceTrigger=PropertyChanged}"
                               Style="{StaticResource CustomCB}"
                               >
                         <ComboBoxItem>High</ComboBoxItem>
@@ -287,7 +287,7 @@
                                Text="Privileges Required"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"
-                              SelectedItem="{Binding a , UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemPrivilegesRequired , UpdateSourceTrigger=PropertyChanged}"
                               Style="{StaticResource CustomCB}"
                               >
                         <ComboBoxItem>None</ComboBoxItem>
@@ -297,7 +297,7 @@
                     <TextBlock Style="{StaticResource TextBaseEqBox}"
                                Text="User Interaction"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a , UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemUserInteraction , UpdateSourceTrigger=PropertyChanged}"
                               >
                         <ComboBoxItem>None</ComboBoxItem>
                         <ComboBoxItem>Required</ComboBoxItem>
@@ -313,7 +313,7 @@
                                Text="Scope"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a , UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemScope , UpdateSourceTrigger=PropertyChanged}"
                               >
                         <ComboBoxItem>Unchanged</ComboBoxItem>
                         <ComboBoxItem>Changed</ComboBoxItem>
@@ -322,7 +322,7 @@
                                Text="Confidentiality"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemConfidentiality, UpdateSourceTrigger=PropertyChanged}"
                               >
                         <ComboBoxItem>None</ComboBoxItem>
                         <ComboBoxItem>Low</ComboBoxItem>
@@ -332,7 +332,7 @@
                                Text="Integrity"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemIntegrity, UpdateSourceTrigger=PropertyChanged}"
 
                               >
                         <ComboBoxItem>None</ComboBoxItem>
@@ -356,7 +356,7 @@
                                Text="Availability"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemAvailability, UpdateSourceTrigger=PropertyChanged}"
 
                               >
                         <ComboBoxItem>None</ComboBoxItem>
@@ -364,10 +364,10 @@
                         <ComboBoxItem>High</ComboBoxItem>
                     </ComboBox>
                     <TextBlock Style="{StaticResource TextBaseEqBox}"
-                               Text="Exploit Code Maturity (E)"
+                               Text="Exploit Code Maturity"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemExploitCodeMaturity, UpdateSourceTrigger=PropertyChanged}"
 
                               >
                         <ComboBoxItem>None</ComboBoxItem>
@@ -377,10 +377,10 @@
                         <ComboBoxItem>Hight</ComboBoxItem>
                     </ComboBox>
                     <TextBlock Style="{StaticResource TextBaseEqBox}"
-                               Text="Remediation Level (RL)"
+                               Text="Remediation Level"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemRemediationLevel, UpdateSourceTrigger=PropertyChanged}"
 
                               >
                         <ComboBoxItem>None</ComboBoxItem>
@@ -390,10 +390,10 @@
                         <ComboBoxItem>Unavailable</ComboBoxItem>
                     </ComboBox>
                     <TextBlock Style="{StaticResource TextBaseEqBox}"
-                               Text="Report Confidence (RC)"
+                               Text="Report Confidence"
                                Margin="0,10,0,0"/>
                     <ComboBox Margin="10,10,10,20"  Style="{StaticResource CustomCB}"
-                              SelectedItem="{Binding a, UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding SelectedItemReportConfidence, UpdateSourceTrigger=PropertyChanged}"
 
                               >
                         <ComboBoxItem>None</ComboBoxItem>

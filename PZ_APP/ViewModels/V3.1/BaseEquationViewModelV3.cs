@@ -375,9 +375,6 @@ namespace PZ_APP.ViewModels.V3._1
             }
         }
 
-
-
-
         public ICommand CalculateCommand { get; }
 
         public BaseEquationViewModelV3()
