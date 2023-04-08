@@ -39,8 +39,13 @@
                            Text="Attack Vector (AV)"
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
-                               TextWrapping="Wrap"
-                           Text="{Binding AttackVectorValue}"/>
+                               TextWrapping="Wrap">
+                               <Run Text="{Binding AttackVectorValue}" />
+                               <Run Text="{Binding FlagAV}" />
+                                   
+
+
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="0" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -51,7 +56,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding AttackCompexityValue}"/>
+                           >
+                        <Run Text="{Binding AttackCompexityValue}"/>
+                        <Run Text="{Binding FlagAC}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="0" Grid.Row="2" Style="{StaticResource BorderTextEqName}"
@@ -62,7 +70,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding PrivilegesRequiredValue}"/>
+                           >
+                        <Run Text="{Binding PrivilegesRequiredValue}"/>
+                        <Run Text="{Binding FlagPR}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -72,7 +83,10 @@
                            Text="User Interaction (UI)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding UserInteractionValue}"/>
+                           >
+                        <Run Text="{Binding UserInteractionValue}"/>
+                        <Run Text="{Binding FlagUI}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="1" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -82,7 +96,10 @@
                            Text="Scope (S)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ScopeValue}"/>
+                           >
+                        <Run Text="{Binding ScopeValue}"/>
+                        <Run Text="{Binding FlagS}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="1" Grid.Row="2" Style="{StaticResource BorderTextEqName}"
@@ -92,7 +109,10 @@
                            Text="Confidentiality (C)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ConfidentialityValue}"/>
+                           >
+                        <Run Text="{Binding ConfidentialityValue}"/>
+                        <Run Text="{Binding FlagC}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="2" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -102,7 +122,10 @@
                            Text="Integrity (I)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding IntegrityValue}"/>
+                           >
+                        <Run Text="{Binding IntegrityValue}"/>
+                        <Run Text="{Binding FlagI}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="2" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -112,7 +135,10 @@
                            Text="Availability (A)"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding AvailabilityValue}"/>
+                           >
+                        <Run Text="{Binding AvailabilityValue}"/>
+                        <Run Text="{Binding FlagA}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
 
@@ -124,7 +150,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ExploitCodeMaturityValue}"/>
+                           >
+                        <Run Text="{Binding ExploitCodeMaturityValue}"/>
+                        <Run Text="{Binding FlagE}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="3" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -135,7 +164,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding RemediationLevelValue}"/>
+                           >
+                        <Run Text="{Binding RemediationLevelValue}"/>
+                        <Run Text="{Binding FlagRL}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="3" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -146,7 +178,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ReportConfidenceValue}"/>
+                           >
+                        <Run Text="{Binding ReportConfidenceValue}"/>
+                        <Run Text="{Binding FlagRC}"/>
+                        
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="3" Grid.Row="2" Style="{StaticResource BorderTextEqName}"
@@ -157,7 +193,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedAttackVectorValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedAttackVectorValue}"/>
+                        <Run Text="{Binding FlagMAV}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="4" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -168,7 +207,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedAttackComplexityValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedAttackComplexityValue}"/>
+                        <Run Text="{Binding FlagMAC}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="4" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -179,7 +221,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedPrivilegesRequiredValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedPrivilegesRequiredValue}"/>
+                        <Run Text="{Binding FlagMPR}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="4" Grid.Row="2" Style="{StaticResource BorderTextEqName}"
@@ -190,7 +235,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedUserInteractionValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedUserInteractionValue}"/>
+                        <Run Text="{Binding FlagMUI}"/>
+                        
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="5" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -201,7 +250,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedScopeValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedScopeValue}"/>
+                        <Run Text="{Binding FlagMS}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="5" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -212,7 +264,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedConfidentialityValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedConfidentialityValue}"/>
+                        <Run Text="{Binding FlagMC}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="5" Grid.Row="2" Style="{StaticResource BorderTextEqName}"
@@ -223,7 +278,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedIntegrityValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedIntegrityValue}"/>
+                        <Run Text="{Binding FlagMI}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="6" Grid.Row="0" Style="{StaticResource BorderTextEqName}"
@@ -234,7 +292,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ModifiedAvailabilityValue}"/>
+                           >
+                        <Run Text="{Binding ModifiedAvailabilityValue}"/>
+                        <Run Text="{Binding FlagMA}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="6" Grid.Row="1" Style="{StaticResource BorderTextEqName}"
@@ -245,7 +306,11 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding ConfidentialityRequirementValue}"/>
+                           >
+                        <Run Text="{Binding ConfidentialityRequirementValue}"/>
+                        <Run Text="{Binding FlagCR}"/>
+                        
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="6" Grid.Row="2" Style="{StaticResource BorderTextEqName}"
@@ -256,7 +321,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding IntegrityRequirementValue}"/>
+                           >
+                        <Run Text="{Binding IntegrityRequirementValue}"/>
+                        <Run Text="{Binding FlagIR}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="7" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource BorderTextEqName}"
@@ -267,7 +335,10 @@
                                TextWrapping="Wrap"/>
                     <TextBlock Style="{StaticResource TextBaseEqValueEnv}"
                                TextWrapping="Wrap"
-                           Text="{Binding AvailabilityRequirementValue}"/>
+                           >
+                        <Run Text="{Binding AvailabilityRequirementValue}"/>
+                        <Run Text="{Binding FlagAR}"/>
+                    </TextBlock>
                 </StackPanel>
             </Border>
             <Border  Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2"  Style="{StaticResource BorderTextEqName}"
@@ -302,14 +373,6 @@
                                FontSize="12"
                                HorizontalAlignment="Left"
                                Foreground="#1E0508"
-                               TextAlignment="Right"
-                               Margin="10,0,50,1.5"
-                               Text="ModBaseScore"
-                               />
-                    <TextBlock FontFamily="Montserrat"
-                               FontSize="12"
-                               HorizontalAlignment="Left"
-                               Foreground="#1E0508"
                                TextAlignment="Center"
                                Margin="10,0,50,1.5"
                                Text="TemporalScore"
@@ -333,33 +396,25 @@
                                FontSize="12"
                                Foreground="#420C0C"
                                TextAlignment="Center"
-                               Margin="10,1.5,-10,1.5"
+                               Margin="10,1.5,-40,1.5"
                                FontWeight="Bold"
-                                   Text="{Binding BaseScore}"
+                                   Text="{Binding BaseScoreValue}"
                                />
                         <TextBlock FontFamily="Montserrat"
                                FontSize="12"
                                Foreground="#420C0C"
                                TextAlignment="Center"
-                               Margin="10,1.5,-10,1.5"
+                               Margin="10,1.5,-40,1.5"
                                FontWeight="Bold"
-                                   Text="{Binding ModBaseScore}"
+                               Text= "{Binding TemporalScoreValue}"
                                />
                         <TextBlock FontFamily="Montserrat"
                                FontSize="12"
                                Foreground="#420C0C"
                                TextAlignment="Center"
-                               Margin="10,1.5,-10,1.5"
+                               Margin="10,1.5,-40,1.5"
                                FontWeight="Bold"
-                                   Text="{Binding TemporalScore}"
-                               />
-                        <TextBlock FontFamily="Montserrat"
-                               FontSize="12"
-                               Foreground="#420C0C"
-                               TextAlignment="Center"
-                               Margin="10,1.5,-10,1.5"
-                               FontWeight="Bold"
-                                   Text="{Binding EnvironmentalScore}"
+                                   Text="{Binding EnvironmentalScoreValue}"
                                />
                     </StackPanel>
                 </Grid>
@@ -475,7 +530,7 @@
                               SelectedItem="{Binding SelectedItemExploitCodeMaturity, UpdateSourceTrigger=PropertyChanged}"
 
                               >
-                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
                         <ComboBoxItem>Unproven</ComboBoxItem>
                         <ComboBoxItem>Proof-of-Concept</ComboBoxItem>
                         <ComboBoxItem>Functional</ComboBoxItem>
@@ -496,8 +551,8 @@
                               SelectedItem="{Binding SelectedItemRemediationLevel, UpdateSourceTrigger=PropertyChanged}"
 
                               >
-                        <ComboBoxItem>None</ComboBoxItem>
-                        <ComboBoxItem>Offical Fix</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
+                        <ComboBoxItem>Official Fix</ComboBoxItem>
                         <ComboBoxItem>Temporary Fix</ComboBoxItem>
                         <ComboBoxItem>Workaround</ComboBoxItem>
                         <ComboBoxItem>Unavailable</ComboBoxItem>
@@ -509,7 +564,7 @@
                               SelectedItem="{Binding SelectedItemReportConfidence, UpdateSourceTrigger=PropertyChanged}"
 
                               >
-                        <ComboBoxItem>None</ComboBoxItem>
+                        <ComboBoxItem>Not defined</ComboBoxItem>
                         <ComboBoxItem>Unknown</ComboBoxItem>
                         <ComboBoxItem>Reasonable</ComboBoxItem>
                         <ComboBoxItem>Confirmed</ComboBoxItem>

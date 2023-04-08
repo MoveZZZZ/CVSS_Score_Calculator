@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using PZ_APP.Models.V3._1;
+using PZ_APP.Repositories.V3._1;
 
 namespace PZ_APP.ViewModels.V3._1
 {
@@ -942,10 +944,14 @@ namespace PZ_APP.ViewModels.V3._1
         }
 
         public ICommand CalculateCommand { get; }
+        private IEnvironmentalEquationRepositoryV3 EnvironmentalEquationRepositoryV3;
+        private EnvironmentalEquationModelV3 _EnvironmentalEquationModelV3;
 
         public EnvironmentalEquationViewModelV3()
         {
             ErrorMessage = "Bad Data!";
+            EnvironmentalEquationRepositoryV3 = new EnvironmentalEquationRepositoryV3();
+            _EnvironmentalEquationModelV3 = new EnvironmentalEquationModelV3();
             CalculateCommand = new ViewModelCommand(ExecuteCalculateCommand, CanExecuteCalculateCommand);
         }
 
@@ -959,6 +965,7 @@ namespace PZ_APP.ViewModels.V3._1
                  && _selectedItemModifiedScopeString != null && _selectedItemModifiedUserInteractionString != null && _selectedItemConfidentialityRequirementString != null
                  && _selectedItemIntegrityRequirementString != null&&_selectedItemAvailabilityRequirementString!=null)
             {
+                SetValuesEnvironmentalEquationModelV3();
                 ErrorMessage = "";
                 return true;
 
@@ -968,9 +975,42 @@ namespace PZ_APP.ViewModels.V3._1
 
         private void ExecuteCalculateCommand(object obj)
         {
-            SetCalculationValue();
+            EnvironmentalEquationRepositoryV3.setNumberVariables(_EnvironmentalEquationModelV3);
+            EnvironmentalEquationRepositoryV3.calculateAllValues(_EnvironmentalEquationModelV3);
+            SetEndValue();
         }
-        private void SetCalculationValue()
+        private void SetEndValue()
+        {
+            setFlags();
+            setBasicValues();
+            setCalculatedValues();
+        }
+        private void SetValuesEnvironmentalEquationModelV3()
+        {
+            _EnvironmentalEquationModelV3.AttackVectorString = _selectedItemAttackVectorString;
+            _EnvironmentalEquationModelV3.AttackComplexityString = _selectedItemAttackComplexityString;
+            _EnvironmentalEquationModelV3.PrivilegesRequiredString = _selectedItemPrivilegesRequiredString;
+            _EnvironmentalEquationModelV3.UserInteractionString = _selectedItemUserInteractionString;
+            _EnvironmentalEquationModelV3.ScopeString = _selectedItemScopeString;
+            _EnvironmentalEquationModelV3.ConfidentialityString = _selectedItemConfidentialityString;
+            _EnvironmentalEquationModelV3.IntegrityString = _selectedItemIntegrityString;
+            _EnvironmentalEquationModelV3.AvailabilityString = _selectedItemAvailabilityString;
+            _EnvironmentalEquationModelV3.ExploitCodeMaturityString = _selectedItemExploitCodeMaturityString;
+            _EnvironmentalEquationModelV3.RemediationLevelString = _selectedItemRemediationLevelString;
+            _EnvironmentalEquationModelV3.ReportConfidenceString = _selectedItemReportConfidenceString;
+            _EnvironmentalEquationModelV3.ConfidentialityRequirementString = _selectedItemConfidentialityRequirementString;
+            _EnvironmentalEquationModelV3.IntegrityRequirementString = _selectedItemIntegrityRequirementString;
+            _EnvironmentalEquationModelV3.AvailabilityRequirementString = _selectedItemAvailabilityRequirementString;
+            _EnvironmentalEquationModelV3.ModifiedAttackVectorString = _selectedItemModifiedAttackVectorString;
+            _EnvironmentalEquationModelV3.ModifiedAttackComplexityString = _selectedItemModifiedAttackComplexityString;
+            _EnvironmentalEquationModelV3.ModifiedPrivilegesRequiredString = _selectedItemModifiedPrivilegesRequiredString;
+            _EnvironmentalEquationModelV3.ModifiedUserInteractionString = _selectedItemModifiedUserInteractionString;
+            _EnvironmentalEquationModelV3.ModifiedScopeString = _selectedItemModifiedScopeString;
+            _EnvironmentalEquationModelV3.ModifiedConfidentialityString = _selectedItemModifiedConfidentialityString;
+            _EnvironmentalEquationModelV3.ModifiedIntegrityString = _selectedItemModifiedIntegrityString;
+            _EnvironmentalEquationModelV3.ModifiedAvailabilityString = _selectedItemModifiedAvailabilityString;
+        }
+        private void setBasicValues()
         {
             AttackVectorValue = _selectedItemAttackVectorString;
             AttackCompexityValue = _selectedItemAttackComplexityString;
@@ -995,7 +1035,37 @@ namespace PZ_APP.ViewModels.V3._1
             ConfidentialityRequirementValue = _selectedItemConfidentialityRequirementString;
             IntegrityRequirementValue = _selectedItemIntegrityRequirementString;
             AvailabilityRequirementValue = _selectedItemAvailabilityRequirementString;
-
+        }
+        private void setFlags()
+        {
+            FlagAV = "(" + Convert.ToString(_EnvironmentalEquationModelV3.AttackVectorNumber) + ")";
+            FlagAC = "(" + Convert.ToString(_EnvironmentalEquationModelV3.AttackComplexityNumber) + ")";
+            FlagPR = "(" + Convert.ToString(_EnvironmentalEquationModelV3.PrivilegesRequiredNumber) + ")";
+            FlagUI = "(" + Convert.ToString(_EnvironmentalEquationModelV3.UserInteractionNumber) + ")";
+            FlagS = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ScopeNumber) + ")";
+            FlagC = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ConfidentialityNumber) + ")";
+            FlagI = "(" + Convert.ToString(_EnvironmentalEquationModelV3.IntegrityNumber) + ")";
+            FlagA = "(" + Convert.ToString(_EnvironmentalEquationModelV3.AvailabilityNumber) + ")";
+            FlagE = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ExploitCodeMaturityNumber) + ")";
+            FlagRL = "(" + Convert.ToString(_EnvironmentalEquationModelV3.RemediationLevelNumber) + ")";
+            FlagRC = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ReportConfidenceNumber) + ")";
+            FlagCR = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ConfidentialityRequirementNumber) + ")";
+            FlagIR = "(" + Convert.ToString(_EnvironmentalEquationModelV3.IntegrityRequirementNumber) + ")";
+            FlagAR = "(" + Convert.ToString(_EnvironmentalEquationModelV3.AvailabilityRequirementNumber) + ")";
+            FlagMAV = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedAttackVectorNumber) + ")";
+            FlagMAC = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedAttackComplexityNumber) + ")";
+            FlagMPR = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedPrivilegesRequiredNumber) + ")";
+            FlagMUI = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedUserInteractionNumber) + ")";
+            FlagMS = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedScopeNumber) + ")";
+            FlagMC = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedConfidentialityNumber) + ")";
+            FlagMI = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedIntegrityNumber) + ")";
+            FlagMA = "(" + Convert.ToString(_EnvironmentalEquationModelV3.ModifiedAvailabilityNumber) + ")";
+        }
+        private void setCalculatedValues()
+        {
+            BaseScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.BaseScore) + " ("+_EnvironmentalEquationModelV3.RatingBase+")";
+            TemporalScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.TemporalScore)+" ("+_EnvironmentalEquationModelV3.RatingTemporal+")";
+            EnvironmentalScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.EnvironmentalScore)+" ("+_EnvironmentalEquationModelV3.RatingEnvironmental+")";
         }
     }
 }
