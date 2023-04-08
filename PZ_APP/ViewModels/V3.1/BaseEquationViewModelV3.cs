@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PZ_APP.Models.V3._1;
+using PZ_APP.Repositories.V3._1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +42,7 @@ namespace PZ_APP.ViewModels.V3._1
         private string _baseScoreString;
         private string _impactString;
         private string _exploitabilityString;
+        private string _issString;
 
 
         private string _flagAV;
@@ -160,6 +163,18 @@ namespace PZ_APP.ViewModels.V3._1
                 {
                     _exploitabilityString = value;
                     OnPropertyChanged(nameof(ExploitabilityValue));
+                }
+            }
+        }
+        public string ISSValue
+        {
+            get { return _issString; }
+            set
+            {
+                if(_issString != value)
+                {
+                    _issString = value;
+                    OnPropertyChanged(nameof(ISSValue));
                 }
             }
         }
@@ -375,14 +390,15 @@ namespace PZ_APP.ViewModels.V3._1
             }
         }
 
-
-
-
         public ICommand CalculateCommand { get; }
+        private IBaseEquationsRepositoryV3 BaseEquationRepositoryV3;
+        private BaseEquationsModelV3 _BaseEquationModelV3;
 
         public BaseEquationViewModelV3()
         {
             ErrorMessage = "Bad Data!";
+            BaseEquationRepositoryV3 = new BaseEquationsRepositoryV3();
+            _BaseEquationModelV3 = new BaseEquationsModelV3();
             CalculateCommand = new ViewModelCommand(ExecuteCalculateCommand, CanExecuteCalculateCommand);
         }
 
@@ -391,6 +407,7 @@ namespace PZ_APP.ViewModels.V3._1
             if(_selectedItemAttackComplexityString!=null && _selectedItemAttackVectorString!=null&&_selectedItemAvailabilityString!=null&&_selectedItemConfidentialityString!=null
                 &&_selectedItemIntegrityString!=null&&_selectedItemPrivilegesRequiredString!=null&&_selectedItemScopeString!=null&& _selectedItemUserInteractionString!=null)
             {
+                SetValuesBaseEquationModelV3();
                 ErrorMessage = "";
                 return true;
             }
@@ -399,11 +416,33 @@ namespace PZ_APP.ViewModels.V3._1
 
         private void ExecuteCalculateCommand(object obj)
         {
-            SetCalculationValue();
+            BaseEquationRepositoryV3.setNumberVariables(_BaseEquationModelV3);
+            BaseEquationRepositoryV3.calculateAllValues(_BaseEquationModelV3);
+            SetEndValue();
         }
 
 
-        private void SetCalculationValue()
+        private void SetEndValue()
+        {
+            setBasicValues();
+            setFlags();
+            setCalculatedValues();
+        }
+
+        private void SetValuesBaseEquationModelV3()
+        {
+            _BaseEquationModelV3.AttackVectorString = _selectedItemAttackVectorString;
+            _BaseEquationModelV3.AttackComplexityString = _selectedItemAttackComplexityString;
+            _BaseEquationModelV3.PrivilegesRequiredString = _selectedItemPrivilegesRequiredString;
+            _BaseEquationModelV3.UserInteractionString = _selectedItemUserInteractionString;
+            _BaseEquationModelV3.ScopeString = _selectedItemScopeString;
+            _BaseEquationModelV3.ConfidentialityString = _selectedItemConfidentialityString;
+            _BaseEquationModelV3.IntegrityString = _selectedItemIntegrityString;
+            _BaseEquationModelV3.AvailabilityString = _selectedItemAvailabilityString;
+        }
+
+
+        private void setBasicValues()
         {
             AttackVectorValue = _selectedItemAttackVectorString;
             AttackCompexityValue = _selectedItemAttackComplexityString;
@@ -413,6 +452,24 @@ namespace PZ_APP.ViewModels.V3._1
             ConfidentialityValue = _selectedItemConfidentialityString;
             IntegrityValue = _selectedItemIntegrityString;
             AvailabilityValue = _selectedItemAvailabilityString;
+        }
+        private void setFlags()
+        {
+            FlagAV = Convert.ToString(_BaseEquationModelV3.AttackVectorNumber);
+            FlagAC = Convert.ToString(_BaseEquationModelV3.AttackComplexityNumber);
+            FlagPR = Convert.ToString(_BaseEquationModelV3.PrivilegesRequiredNumber);
+            FlagUI = Convert.ToString(_BaseEquationModelV3.UserInteractionNumber);
+            FlagS = Convert.ToString(_BaseEquationModelV3.ScopeNumber);
+            FlagC = Convert.ToString(_BaseEquationModelV3.ConfidentialityNumber);
+            FlagI = Convert.ToString(_BaseEquationModelV3.IntegrityNumber);
+            FlagA = Convert.ToString(_BaseEquationModelV3.AvailabilityNumber);
+        }
+        private void setCalculatedValues()
+        {
+            BaseScoreValue = Convert.ToString(_BaseEquationModelV3.BaseScore) +" ("+_BaseEquationModelV3.Rating+")";
+            ImpactValue = Convert.ToString(_BaseEquationModelV3.Impact);
+            ExploitabilityValue = Convert.ToString(_BaseEquationModelV3.Exploitability);
+            ISSValue = Convert.ToString(_BaseEquationModelV3.ISS);
         }
     }
 }
