@@ -1065,7 +1065,7 @@ namespace PZ_APP.ViewModels.V3._1
         {
             BaseScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.BaseScore) + " ("+_EnvironmentalEquationModelV3.RatingBase+")";
             TemporalScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.TemporalScore)+" ("+_EnvironmentalEquationModelV3.RatingTemporal+")";
-            EnvironmentalScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.EnvironmentalScore)+" ("+_EnvironmentalEquationModelV3.RatingEnvironmental+")";
+            EnvironmentalScoreValue = Convert.ToString(_EnvironmentalEquationModelV3.EnvironmentalScore)+ "±0,1" + " ("+_EnvironmentalEquationModelV3.RatingEnvironmental+")";
         }
     }
 }

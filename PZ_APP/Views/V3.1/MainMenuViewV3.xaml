@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PZ_APP.Views.V3._1"
              mc:Ignorable="d" 
-            d:DesignHeight="670" d:DesignWidth="1170">
+            d:DesignHeight="760" d:DesignWidth="1170">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="600"/>
+            <RowDefinition Height="635"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Style="{StaticResource BorderTextEqName}">
@@ -24,14 +24,14 @@
         </Border>
         <Border Grid.Row="1" Style="{StaticResource BorderTextEqName}">
             <StackPanel Margin="10,20,10,20">
-                <TextBlock Text="   Currently, IT management must identify and assess vulnerabilities across many disparate hardware and software platforms. They need to prioritize these vulnerabilities and remediate those that pose the greatest risk. But when there are so many to fix, with each being scored using different scales, how can IT managers convert this mountain of vulnerability data into actionable information? The Common Vulnerability Scoring System (CVSS) is an open framework that addresses this issue."
+                <TextBlock Text="   The Common Vulnerability Scoring System (CVSS) is an open framework for communicating the characteristics and severity of software vulnerabilities. CVSS consists of three metric groups: Base, Temporal, and Environmental. The Base group represents the intrinsic qualities of a vulnerability that are constant over time and across user environments, the Temporal group reflects the characteristics of a vulnerability that change over time, and the Environmental group represents the characteristics of a vulnerability that are unique to a user's environment. The Base metrics produce a score ranging from 0 to 10, which can then be modified by scoring the Temporal and Environmental metrics. A CVSS score is also represented as a vector string, a compressed textual representation of the values used to derive the score. This document provides the official specification for CVSS version 3.1."
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
                            HorizontalAlignment="Stretch"
                            FontSize="16"
                            FontFamily="Montserrat"
                            Foreground="#420C0C"/>
-                <TextBlock Text ="  This application calculates the CVCC scoring based on the corporation's known parameters, given that the flag values ​​are known. The application allows you to calculate Base Equation, Temporal Equation, Environmental Equation."
+                <TextBlock Text ="  This application calculates the CVCC scoring based on the corporation's known parameters, given that the flag values ​​are known. The application allows you to calculate Base Equation, Temporal Equation, Environmental Equation in standart V3.1.  The Base Score reflects the severity of a vulnerability according to its intrinsic characteristics which are constant over time and assumes the reasonable worst case impact across different deployed environments. The Temporal Metrics adjust the Base severity of a vulnerability based on factors that change over time, such as the availability of exploit code. The Environmental Metrics adjust the Base and Temporal severities to a specific computing environment. They consider factors such as the presence of mitigations in that environment."
                            Margin="0,10,0,0"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
@@ -40,7 +40,7 @@
                            FontFamily="Montserrat"
                            Foreground="#420C0C"
                     />
-                <TextBlock Text="Each metric in the vector consists of the abbreviated metric name, followed by a : (colon), then the abbreviated metric value. The vector lists these metrics in a predetermined order, using the / (slash) character to separate the metrics. If a temporal or environmental metric is not to be used, it is given a value of ND (not defined). The base, temporal, and environmental vectors are shown below in Table."
+                <TextBlock Text="   CVSS is composed of three metric groups: Base, Temporal, and Environmental, each consisting of a set of metrics, as shown in Figure"
                            Margin="0,10,0,0"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
@@ -48,8 +48,11 @@
                            FontSize="16"
                            FontFamily="Montserrat"
                            Foreground="#420C0C"/>
-                
-                <TextBlock Text="   For example, a vulnerability with base metric values of Access Vector: Low, Access Complexity: Medium, Authentication: None, Confidentiality Impact: None, Integrity Impact: Partial, Availability Impact: Complete would have the following base vector: AV:L/AC:M/Au:N/C:N/I:P/A:C."
+                <Image Margin="50,10,50,10"
+                       Height="200"
+                       Source="/Images/v3Table.png"/>
+
+                <TextBlock Text="   The benefits of CVSS include the provision of a standardized vendor and platform agnostic vulnerability scoring methodology. It is an open framework, providing transparency to the individual characteristics and methodology used to derive a score."
                            Margin="0,10,0,0"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
@@ -60,7 +63,7 @@
                            />
                 <TextBlock Text="Source: first.org, Common Vulnerability Scoring System v3.1: Specification Document"
                            HorizontalAlignment="Right"
-                           Margin="0,40,0,0"
+                           Margin="0,10,0,0"
                            TextWrapping="Wrap"
                            VerticalAlignment="Stretch"
                            FontSize="14"
