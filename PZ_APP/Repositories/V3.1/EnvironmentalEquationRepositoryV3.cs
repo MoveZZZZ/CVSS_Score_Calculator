@@ -83,11 +83,11 @@ namespace PZ_APP.Repositories.V3._1
                 environmental_equation_model_v3.ModifiedUserInteractionNumber = environmental_equation_model_v3.UserInteractionNumber;
         }
 
-        public void calculateBaseScore(EnvironmentalEquationModelV3 environmental_equation_model_v3)
+        public void calculateBaseScore(EnvironmentalEquationModelV3 environmental_equation_model_v3) ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         {
             if (environmental_equation_model_v3.Impact <= 0)
             {
-                environmental_equation_model_v3.BaseScore = 0;
+                environmental_equation_model_v3.ScopeNumber= 0;
             }
             else if (environmental_equation_model_v3.ScopeNumber == 1)
             {
@@ -110,7 +110,7 @@ namespace PZ_APP.Repositories.V3._1
                 environmental_equation_model_v3.EnvironmentalScore =
                     Roundtrip(
                         Roundtrip(
-                        Math.Min(1.08 * (environmental_equation_model_v3.ModifiedImpact + environmental_equation_model_v3.ModifiedExploitability), 10)
+                        Math.Min(1.080000 * (environmental_equation_model_v3.ModifiedImpact + environmental_equation_model_v3.ModifiedExploitability), 10)
                         * environmental_equation_model_v3.ExploitCodeMaturityNumber * environmental_equation_model_v3.RemediationLevelNumber * environmental_equation_model_v3.ReportConfidenceNumber)
                         );
             }
@@ -125,7 +125,7 @@ namespace PZ_APP.Repositories.V3._1
             }
         }
 
-        public void calculateImpact(EnvironmentalEquationModelV3 environmental_equation_model_v3)
+        public void calculateImpact(EnvironmentalEquationModelV3 environmental_equation_model_v3) ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         {
             if (environmental_equation_model_v3.ScopeNumber == 1)
             {
@@ -144,7 +144,7 @@ namespace PZ_APP.Repositories.V3._1
             }
             else
             {
-                environmental_equation_model_v3.Impact = 6.42 * environmental_equation_model_v3.MISS;
+                environmental_equation_model_v3.ModifiedImpact = 6.42 * environmental_equation_model_v3.MISS;
             }
         }
 

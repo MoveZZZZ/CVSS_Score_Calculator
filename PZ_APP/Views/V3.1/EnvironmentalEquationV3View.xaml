@@ -412,7 +412,7 @@
                                FontSize="12"
                                Foreground="#420C0C"
                                TextAlignment="Center"
-                               Margin="10,1.5,-40,1.5"
+                               Margin="20,1.5,-40,1.5"
                                FontWeight="Bold"
                                    Text="{Binding EnvironmentalScoreValue}"
                                />
@@ -534,7 +534,7 @@
                         <ComboBoxItem>Unproven</ComboBoxItem>
                         <ComboBoxItem>Proof-of-Concept</ComboBoxItem>
                         <ComboBoxItem>Functional</ComboBoxItem>
-                        <ComboBoxItem>Hight</ComboBoxItem>
+                        <ComboBoxItem>High</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
             </Border>
