@@ -41,7 +41,6 @@ namespace PZ_APP.Repositories.V3._1
 
         public void calculateAllValues(EnvironmentalEquationModelV3 environmental_equation_model_v3)
         {
-            checkDefinedVariables(environmental_equation_model_v3);
             calculateISS(environmental_equation_model_v3);
             calculateMISS(environmental_equation_model_v3);
             calculateImpact(environmental_equation_model_v3);
@@ -73,8 +72,6 @@ namespace PZ_APP.Repositories.V3._1
             if (environmental_equation_model_v3.ModifiedIntegrityNumber == -1)
                 environmental_equation_model_v3.ModifiedIntegrityNumber = environmental_equation_model_v3.IntegrityNumber;
 
-            if (environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber == -1)
-                environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber = environmental_equation_model_v3.PrivilegesRequiredNumber;
 
             if (environmental_equation_model_v3.ModifiedScopeNumber == -1)
                 environmental_equation_model_v3.ModifiedScopeNumber = environmental_equation_model_v3.ScopeNumber;
@@ -119,7 +116,7 @@ namespace PZ_APP.Repositories.V3._1
                 environmental_equation_model_v3.EnvironmentalScore =
                     Roundtrip(
                         Roundtrip(
-                        Math.Min((environmental_equation_model_v3.ModifiedImpact + environmental_equation_model_v3.ModifiedExploitability), 10)
+                        Math.Min(1*(environmental_equation_model_v3.ModifiedImpact + environmental_equation_model_v3.ModifiedExploitability), 10)
                         * environmental_equation_model_v3.ExploitCodeMaturityNumber * environmental_equation_model_v3.RemediationLevelNumber * environmental_equation_model_v3.ReportConfidenceNumber)
                         );
             }
@@ -131,7 +128,7 @@ namespace PZ_APP.Repositories.V3._1
             {
                 environmental_equation_model_v3.Impact = 7.52 * (environmental_equation_model_v3.ISS - 0.029) - 3.25 * Math.Pow((environmental_equation_model_v3.ISS - 0.02), 15);
             }
-            else
+            else 
             {
                 environmental_equation_model_v3.Impact = 6.42 * environmental_equation_model_v3.ISS;
             }
@@ -140,7 +137,8 @@ namespace PZ_APP.Repositories.V3._1
         {
             if (environmental_equation_model_v3.ModifiedScopeNumber == 1)
             {
-                environmental_equation_model_v3.ModifiedImpact = 7.52 * (environmental_equation_model_v3.MISS - 0.029) - 3.25 * Math.Pow((environmental_equation_model_v3.MISS*0.9731-0.02), 13);
+              environmental_equation_model_v3.ModifiedImpact = 7.52 * (environmental_equation_model_v3.MISS - 0.029) - 3.25 * Math.Pow((environmental_equation_model_v3.MISS*0.9731-0.02), 13);  //OLD FORMULA 
+                //environmental_equation_model_v3.ModifiedImpact = 7.52 * (environmental_equation_model_v3.MISS - 0.029) - 3.25 * Math.Pow((environmental_equation_model_v3.MISS-0.02), 15);  //NEW FORMULA
             }
             else
             {
@@ -274,7 +272,11 @@ namespace PZ_APP.Repositories.V3._1
             environmental_equation_model_v3.ModifiedAttackComplexityNumber = ModifiedAttackComplexityDict[environmental_equation_model_v3.ModifiedAttackComplexityString.ToLower()];
             environmental_equation_model_v3.ModifiedUserInteractionNumber = ModifiedUserInteractionDict[environmental_equation_model_v3.ModifiedUserInteractionString.ToLower()];
             environmental_equation_model_v3.ModifiedScopeNumber = ModifiedScopeDict[environmental_equation_model_v3.ModifiedScopeString.ToLower()];
-            if(environmental_equation_model_v3.ModifiedScopeNumber==1)
+            environmental_equation_model_v3.ModifiedConfidentialityNumber = ModifiedConfidentialityDict[environmental_equation_model_v3.ModifiedConfidentialityString.ToLower()];
+            environmental_equation_model_v3.ModifiedIntegrityNumber = ModifiedIntegrityDict[environmental_equation_model_v3.ModifiedIntegrityString.ToLower()];
+            environmental_equation_model_v3.ModifiedAvailabilityNumber = ModifiedAvailabilityDict[environmental_equation_model_v3.ModifiedAvailabilityString.ToLower()];
+            checkDefinedVariables(environmental_equation_model_v3);
+            if (environmental_equation_model_v3.ModifiedScopeNumber == 1)
             {
                 environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber = ModifiedPrivilegesRequiredScopeChangedDict[environmental_equation_model_v3.ModifiedPrivilegesRequiredString.ToLower()];
             }
@@ -282,14 +284,23 @@ namespace PZ_APP.Repositories.V3._1
             {
                 environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber = ModifiedPrivilegesRequiredDict[environmental_equation_model_v3.ModifiedPrivilegesRequiredString.ToLower()];
             }
-            environmental_equation_model_v3.ModifiedConfidentialityNumber = ModifiedConfidentialityDict[environmental_equation_model_v3.ModifiedConfidentialityString.ToLower()];
-            environmental_equation_model_v3.ModifiedIntegrityNumber = ModifiedIntegrityDict[environmental_equation_model_v3.ModifiedIntegrityString.ToLower()];
-            environmental_equation_model_v3.ModifiedAvailabilityNumber = ModifiedAvailabilityDict[environmental_equation_model_v3.ModifiedAvailabilityString.ToLower()];
+
+
+            if (environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber == -1 && (environmental_equation_model_v3.ScopeNumber == environmental_equation_model_v3.ModifiedScopeNumber))
+            {
+                environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber = environmental_equation_model_v3.PrivilegesRequiredNumber;
+            }
+            else if (environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber == -1 && environmental_equation_model_v3.ModifiedScopeNumber == 1)
+            {
+                environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber = ModifiedPrivilegesRequiredScopeChangedDict[environmental_equation_model_v3.PrivilegesRequiredString.ToLower()];
+            }
+            else if (environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber == -1 && environmental_equation_model_v3.ModifiedScopeNumber == 0)
+            {
+                environmental_equation_model_v3.ModifiedPrivilegesRequiredNumber = ModifiedPrivilegesRequiredDict[environmental_equation_model_v3.PrivilegesRequiredString.ToLower()];
+            }
             environmental_equation_model_v3.ConfidentialityRequirementNumber = ConfidentialityRequirementDict[environmental_equation_model_v3.ConfidentialityRequirementString.ToLower()];
             environmental_equation_model_v3.IntegrityRequirementNumber = ConfidentialityRequirementDict[environmental_equation_model_v3.IntegrityRequirementString.ToLower()];
             environmental_equation_model_v3.AvailabilityRequirementNumber = AvailabilityRequirementDict[environmental_equation_model_v3.AvailabilityRequirementString.ToLower()];
-
-           
 
         }
 
@@ -523,7 +534,7 @@ namespace PZ_APP.Repositories.V3._1
             }
             else
             {
-                calculated = (double)Math.Floor((valChang / 10000.0) + 1) / 10;
+                calculated = (double)Math.Floor((valChang / 10000.0) + 1) / 10.0;
                 return calculated;
             }
         }
